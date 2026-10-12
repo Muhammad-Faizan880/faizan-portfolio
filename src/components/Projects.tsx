@@ -145,7 +145,7 @@ export const Projects: React.FC = () => {
                       {currentProject.category}
                     </span>
                     {currentProject.featured && (
-                      <span className="px-2.5 py-1 rounded-full bg-olive text-offwhite text-[11px] font-bold">
+                      <span className="px-2.5 py-1 rounded-full bg-olive text-offwhite text-xs font-bold">
                         Featured Case Study
                       </span>
                     )}
@@ -226,7 +226,7 @@ export const Projects: React.FC = () => {
                             <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block" />
                           </div>
 
-                          <div className="flex-1 max-w-sm mx-auto px-3 py-1 rounded-lg bg-white border border-sage/60 flex items-center justify-center gap-1.5 text-[11px] text-muted font-mono truncate">
+                          <div className="flex-1 max-w-sm mx-auto px-3 py-1 rounded-lg bg-white border border-sage/60 flex items-center justify-center gap-1.5 text-xs text-muted font-mono truncate">
                             <Lock className="w-3 h-3 text-olive shrink-0" />
                             <span className="truncate">
                               {currentProject.liveUrl
@@ -235,7 +235,7 @@ export const Projects: React.FC = () => {
                             </span>
                           </div>
 
-                          <span className="text-[10px] font-mono uppercase tracking-wider text-muted hidden sm:inline-block">
+                          <span className="text-xs font-mono uppercase tracking-wider text-muted hidden sm:inline-block">
                             Live UI
                           </span>
                         </div>

@@ -32,7 +32,7 @@ export const ProjectModal: React.FC<Props> = ({ project, onClose }) => {
                 {project.category}
               </span>
               {project.featured && (
-                <span className="text-[11px] font-mono text-muted">
+                <span className="text-xs font-mono text-muted">
                   • Featured Engineering Case Study
                 </span>
               )}
@@ -69,7 +69,7 @@ export const ProjectModal: React.FC<Props> = ({ project, onClose }) => {
                 <button
                   type="button"
                   onClick={() => setModalTab('screenshot')}
-                  className={`px-2.5 py-0.5 rounded text-[11px] font-semibold transition-all cursor-pointer ${
+                  className={`px-2.5 py-0.5 rounded text-xs font-semibold transition-all cursor-pointer ${
                     modalTab === 'screenshot'
                       ? 'bg-olive text-white'
                       : 'text-muted hover:text-charcoal'
@@ -80,7 +80,7 @@ export const ProjectModal: React.FC<Props> = ({ project, onClose }) => {
                 <button
                   type="button"
                   onClick={() => setModalTab('interactive')}
-                  className={`px-2.5 py-0.5 rounded text-[11px] font-semibold transition-all cursor-pointer ${
+                  className={`px-2.5 py-0.5 rounded text-xs font-semibold transition-all cursor-pointer ${
                     modalTab === 'interactive'
                       ? 'bg-olive text-white'
                       : 'text-muted hover:text-charcoal'
@@ -95,13 +95,13 @@ export const ProjectModal: React.FC<Props> = ({ project, onClose }) => {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-[11px] text-olive hover:underline font-mono flex items-center gap-1"
+                  className="text-xs text-olive hover:underline font-mono flex items-center gap-1"
                 >
                   <span>Launch</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               ) : (
-                <span className="text-[11px] font-mono text-muted">Verified</span>
+                <span className="text-xs font-mono text-muted">Verified</span>
               )}
             </div>
 

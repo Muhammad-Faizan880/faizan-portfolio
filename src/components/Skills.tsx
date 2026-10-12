@@ -63,7 +63,7 @@ export const Skills: React.FC = () => {
               >
                 {/* Floating Hover Tooltip */}
                 <div className="absolute -top-11 left-1/2 -translate-x-1/2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none z-30 whitespace-nowrap">
-                  <div className="bg-charcoal text-offwhite text-[11px] font-mono px-3 py-1.5 rounded-xl shadow-xl border border-sage/20 flex items-center gap-1.5">
+                  <div className="bg-charcoal text-offwhite text-xs font-mono px-3 py-1.5 rounded-xl shadow-xl border border-sage/20 flex items-center gap-1.5">
                     {isActive ? (
                       <>
                         <span>Currently viewing this domain</span>
@@ -88,12 +88,12 @@ export const Skills: React.FC = () => {
                     {getCategoryIcon(cat.icon)}
                   </div>
                   {isActive ? (
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-olive text-white flex items-center gap-1 shadow-2xs">
+                    <span className="px-2 py-0.5 rounded-full text-xs font-mono font-bold bg-olive text-white flex items-center gap-1 shadow-2xs">
                       <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                       Active
                     </span>
                   ) : (
-                    <span className="text-[11px] font-mono font-bold text-muted group-hover:text-olive transition-colors">
+                    <span className="text-xs font-mono font-bold text-muted group-hover:text-olive transition-colors">
                       
                     </span>
                   )}  
@@ -103,12 +103,12 @@ export const Skills: React.FC = () => {
                   <h3 className="text-sm font-bold text-charcoal group-hover:text-olive transition-colors">
                     {cat.category}
                   </h3>
-                  <p className="text-[11px] text-muted mt-0.5 line-clamp-1">
+                  <p className="text-xs text-muted mt-0.5 line-clamp-1">
                     {cat.description}
                   </p>
 
                   {/* Clear affordance indicator */}
-                  <div className="pt-2.5 mt-2 border-t border-sage/60 flex items-center justify-between text-[11px] font-mono">
+                  <div className="pt-2.5 mt-2 border-t border-sage/60 flex items-center justify-between text-xs font-mono">
                     <span className={isActive ? 'font-bold text-olive' : 'text-muted'}>
                       {cat.skills.length} skills
                     </span>
@@ -195,7 +195,7 @@ export const Skills: React.FC = () => {
                       ImplementationSpec.ts
                     </span>
                   </div>
-                  <span className="text-[11px] font-mono font-bold text-olive bg-olive-light px-2 py-0.5 rounded">
+                  <span className="text-xs font-mono font-bold text-olive bg-olive-light px-2 py-0.5 rounded">
                     Strict Quality
                   </span>
                 </div>

@@ -63,7 +63,7 @@ export const About: React.FC = () => {
       <div className="absolute -right-5 -top-5 h-28 w-28 rounded-full border border-white/10" />
 
       <div className="relative">
-        <p className="text-[10px] uppercase tracking-[0.2em] text-sage">
+        <p className="text-xs uppercase tracking-[0.2em] font-mono text-sage">
           Experience
         </p>
 

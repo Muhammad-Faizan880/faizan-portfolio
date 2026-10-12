@@ -66,10 +66,10 @@ export const TechMarquee: React.FC = () => {
                 {tech.logo}
               </div>
               <div className="flex flex-col">
-                <span className="text-xs sm:text-[12.5px] font-bold text-olive-950 tracking-tight group-hover:text-olive-600 transition-colors whitespace-nowrap">
+                <span className="text-xs sm:text-sm font-bold text-olive-950 tracking-tight group-hover:text-olive-600 transition-colors whitespace-nowrap">
                   {tech.name}
                 </span>
-                <span className="text-[12px] text-olive-700/80 font-mono whitespace-nowrap">
+                <span className="text-xs text-olive-700/80 font-mono whitespace-nowrap">
                   {tech.category}
                 </span>
               </div>

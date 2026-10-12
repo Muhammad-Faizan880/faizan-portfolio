@@ -118,15 +118,15 @@ export const FrontendQualityShowcase: React.FC = () => {
                       : 'max-w-full'
                   }`}
                 >
-                  <div className="flex items-center justify-between pb-2 border-b border-sage text-[10px] text-muted">
+                  <div className="flex items-center justify-between pb-2 border-b border-sage text-xs text-muted">
                     <span className="font-bold text-charcoal">Navigation Surface</span>
                     <span className="text-olive">Live Grid</span>
                   </div>
                   <div className="grid grid-cols-2 gap-2 mt-2">
-                    <div className="h-10 bg-olive-light rounded border border-sage flex items-center justify-center text-[10px] font-mono text-olive">
+                    <div className="h-10 bg-olive-light rounded border border-sage flex items-center justify-center text-xs font-mono text-olive">
                       Col 1
                     </div>
-                    <div className="h-10 bg-olive-light rounded border border-sage flex items-center justify-center text-[10px] font-mono text-olive">
+                    <div className="h-10 bg-olive-light rounded border border-sage flex items-center justify-center text-xs font-mono text-olive">
                       Col 2
                     </div>
                   </div>

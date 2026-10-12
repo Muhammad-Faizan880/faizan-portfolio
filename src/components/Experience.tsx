@@ -93,7 +93,7 @@ export const Experience: React.FC = () => {
                   <span className="text-xs font-mono font-bold text-olive uppercase tracking-wider">
                     CodeNdCoffee
                   </span>
-                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-[10px] font-bold text-emerald-700">
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-700">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     Active Role
                   </span>
@@ -101,7 +101,7 @@ export const Experience: React.FC = () => {
                 <h3 className="text-sm font-bold text-charcoal">
                   Full Stack / Frontend Developer
                 </h3>
-                <div className="flex items-center gap-3 text-[11px] text-muted mt-2 font-mono">
+                <div className="flex items-center gap-3 text-xs text-muted mt-2 font-mono">
                   <span>Jan 2024 — Present</span>
                   <span>•</span>
                   <span>Remote / Hybrid</span>
@@ -122,14 +122,14 @@ export const Experience: React.FC = () => {
                   <span className="text-xs font-mono font-bold text-olive uppercase tracking-wider">
                     SpadaSoft
                   </span>
-                  <span className="px-2 py-0.5 rounded-full bg-offwhite border border-sage text-[10px] font-medium text-muted">
+                  <span className="px-2 py-0.5 rounded-full bg-offwhite border border-sage text-xs font-medium text-muted">
                     1.5 Yrs Tenure
                   </span>
                 </div>
                 <h3 className="text-sm font-bold text-charcoal">
                   Software Engineer (Frontend)
                 </h3>
-                <div className="flex items-center gap-3 text-[11px] text-muted mt-2 font-mono">
+                <div className="flex items-center gap-3 text-xs text-muted mt-2 font-mono">
                   <span>Jul 2022 — Dec 2023</span>
                   <span>•</span>
                   <span>Lahore, Pakistan</span>
@@ -150,14 +150,14 @@ export const Experience: React.FC = () => {
                   <span className="text-xs font-mono font-bold text-olive uppercase tracking-wider">
                     PMAS Arid University
                   </span>
-                  <span className="px-2 py-0.5 rounded-full bg-olive-light border border-sage text-[10px] font-bold text-olive">
+                  <span className="px-2 py-0.5 rounded-full bg-olive-light border border-sage text-xs font-bold text-olive">
                     4-Year BSCS
                   </span>
                 </div>
                 <h3 className="text-sm font-bold text-charcoal">
                   BS Computer Science Degree
                 </h3>
-                <div className="flex items-center gap-3 text-[11px] text-muted mt-2 font-mono">
+                <div className="flex items-center gap-3 text-xs text-muted mt-2 font-mono">
                   <span>2018 – 2022</span>
                   <span>•</span>
                   <span>Rawalpindi, PK</span>
@@ -324,7 +324,7 @@ export const Experience: React.FC = () => {
                             {exp.company}
                           </span>
                           {isCurrent && (
-                            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-[10px] font-bold text-emerald-700">
+                            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-700">
                               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                               Active Role
                             </span>
@@ -361,7 +361,7 @@ export const Experience: React.FC = () => {
                       {exp.technologies.map((t) => (
                         <span
                           key={t}
-                          className="px-2 py-0.5 rounded-md text-[11px] font-medium bg-olive-light text-charcoal border border-sage"
+                          className="px-2 py-0.5 rounded-md text-xs font-medium bg-olive-light text-charcoal border border-sage"
                         >
                           {t}
                         </span>
@@ -388,7 +388,7 @@ export const Experience: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-1.5 text-[11px]">
+              <div className="flex flex-wrap items-center gap-1.5 text-xs">
                 <span className="px-2.5 py-1 rounded-lg bg-offwhite border border-sage text-charcoal font-medium">
                   Algorithms
                 </span>

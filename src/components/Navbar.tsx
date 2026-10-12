@@ -90,7 +90,7 @@ export const Navbar: React.FC = () => {
 
           {/* Availability Pill & Contact CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-olive-100 border border-olive-300 text-[11px] font-mono text-olive-800">
+            <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-olive-100 border border-olive-300 text-xs font-mono text-olive-800">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-olive-600 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-olive-600" />

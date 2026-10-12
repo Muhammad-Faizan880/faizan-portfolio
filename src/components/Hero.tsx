@@ -172,7 +172,7 @@ export const Hero: React.FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-olive-600 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-olive-600" />
               </span>
-              <span className="text-[11px] font-mono font-bold text-olive-800 uppercase tracking-wider">
+              <span className="text-xs font-mono font-bold text-olive-800 uppercase tracking-wider">
                 {PERSONAL_INFO.name} • Available for Projects
               </span>
             </motion.div>
@@ -188,7 +188,7 @@ export const Hero: React.FC = () => {
               }}
               className="space-y-1.5"
             >
-              <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[48px] font-black tracking-tight text-olive-950 leading-[1.08] font-sans">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-olive-950 leading-[1.08] font-sans">
                 FRONTEND DEVELOPER
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-olive-600 via-olive-700 to-olive-800">
@@ -254,7 +254,7 @@ export const Hero: React.FC = () => {
                 <p className="text-xl sm:text-2xl font-extrabold text-olive-950 font-mono tracking-tight">
                   <AnimatedCounter value={3} suffix="+" />
                 </p>
-                <p className="text-[10.5px] text-olive-700 font-medium mt-0.5 leading-tight">
+                <p className="text-xs text-olive-700 font-medium mt-1 leading-snug">
                   Years Exp
                 </p>
               </div>
@@ -263,7 +263,7 @@ export const Hero: React.FC = () => {
                 <p className="text-xl sm:text-2xl font-extrabold text-olive-600 font-mono tracking-tight">
                   <AnimatedCounter value={15} suffix="+" />
                 </p>
-                <p className="text-[10.5px] text-olive-700 font-medium mt-0.5 leading-tight">
+                <p className="text-xs text-olive-700 font-medium mt-1 leading-snug">
                   Shipped Works
                 </p>
               </div>
@@ -272,7 +272,7 @@ export const Hero: React.FC = () => {
                 <p className="text-xl sm:text-2xl font-extrabold text-olive-950 font-mono tracking-tight">
                   <AnimatedCounter value={92} suffix="/100" />
                 </p>
-                <p className="text-[10.5px] text-olive-700 font-medium mt-0.5 leading-tight">
+                <p className="text-xs text-olive-700 font-medium mt-1 leading-snug">
                   Lighthouse
                 </p>
               </div>
@@ -281,7 +281,7 @@ export const Hero: React.FC = () => {
                 <p className="text-xl sm:text-2xl font-extrabold text-olive-600 font-mono tracking-tight">
                   Fast
                 </p>
-                <p className="text-[10.5px] text-olive-700 font-medium mt-0.5 leading-tight">
+                <p className="text-xs text-olive-700 font-medium mt-1 leading-snug">
                   Optimized Performance
                 </p>
               </div>

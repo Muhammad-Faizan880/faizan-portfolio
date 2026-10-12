@@ -133,7 +133,7 @@ export const Contact: React.FC = () => {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div className="truncate">
-                  <p className="text-[11px] text-muted font-medium">Direct Email</p>
+                  <p className="text-xs text-muted font-medium">Direct Email</p>
                   <a
                     href={`mailto:${PERSONAL_INFO.email}`}
                     className="text-xs sm:text-sm font-bold text-charcoal hover:text-olive transition-colors truncate block"
@@ -176,7 +176,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-charcoal">WhatsApp</p>
-                    <p className="text-[10px] text-muted font-mono">+92 308 5170759</p>
+                    <p className="text-xs text-muted font-mono">+92 308 5170759</p>
                   </div>
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-muted group-hover:text-olive transition-colors" />
@@ -196,7 +196,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-charcoal">LinkedIn</p>
-                    <p className="text-[10px] text-muted">Direct Message</p>
+                    <p className="text-xs text-muted">Direct Message</p>
                   </div>
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-muted group-hover:text-olive transition-colors" />
@@ -209,8 +209,8 @@ export const Contact: React.FC = () => {
                 <Clock className="w-3.5 h-3.5 text-olive" />
                 <span>Response Time & Working Hours</span>
               </div>
-              <p className="text-[11px] text-muted leading-relaxed">
-                {PERSONAL_INFO.timezoneNotice} Guaranteed response within 24 hours.
+              <p className="text-xs text-muted leading-relaxed">
+                {PERSONAL_INFO.timezoneNotice} Guaranteed response within 05 hours.
               </p>
             </div>
           </div>
@@ -383,15 +383,15 @@ export const Contact: React.FC = () => {
                         href={gmailWebUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-[11px] hover:bg-rose-700 transition-colors"
+                        className="px-2.5 py-1 rounded-lg bg-rose-600 text-white font-bold text-xs hover:bg-rose-700 transition-colors"
                       >
-                        Open in Web Gmail ↗tredr
+                        Open in Web Gmail ↗
                       </a>
                       <a
                         href={whatsappUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-bold text-[11px] hover:bg-emerald-700 transition-colors"
+                        className="px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 transition-colors"
                       >
                         Send via WhatsApp ↗
                       </a>
