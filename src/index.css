@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --color-offwhite: #F8F8F4;
+  --color-charcoal: #252820;
+  --color-olive: #687548;
+  --color-olive-dark: #525E37;
+  --color-olive-light: #F0F3E8;
+  --color-olive-surface: #E8ECE0;
+  --color-sage: #E5E6DC;
+  --color-sage-subtle: #F3F4EE;
+  --color-muted: #5E6455;
+  --color-muted-light: #858B7C;
+
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: #F8F8F4;
+  color: #252820;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F8F4;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4D7C8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #687548;
+}
+
+/* Smooth Infinite Marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth Perspective 3D */
+.perspective-1200 {
+  perspective: 1200px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}

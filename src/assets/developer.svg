@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients adhering to strict olive & sage palette -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0F3E8" />
+      <stop offset="50%" stop-color="#E5E6DC" />
+      <stop offset="100%" stop-color="#D6DAC8" />
+    </linearGradient>
+    <linearGradient id="oliveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#687548" />
+      <stop offset="100%" stop-color="#525E37" />
+    </linearGradient>
+    <linearGradient id="charcoalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D3227" />
+      <stop offset="100%" stop-color="#1E211A" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#687548" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#687548" stop-opacity="0" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#252820" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="600" height="700" rx="36" fill="url(#bgGrad)" />
+
+  <!-- Architectural Background Grid -->
+  <g stroke="#687548" stroke-width="0.75" stroke-opacity="0.15">
+    <line x1="50" y1="0" x2="50" y2="700" />
+    <line x1="150" y1="0" x2="150" y2="700" />
+    <line x1="250" y1="0" x2="250" y2="700" />
+    <line x1="350" y1="0" x2="350" y2="700" />
+    <line x1="450" y1="0" x2="450" y2="700" />
+    <line x1="550" y1="0" x2="550" y2="700" />
+    <line x1="0" y1="100" x2="600" y2="100" />
+    <line x1="0" y1="200" x2="600" y2="200" />
+    <line x1="0" y1="300" x2="600" y2="300" />
+    <line x1="0" y1="400" x2="600" y2="400" />
+    <line x1="0" y1="500" x2="600" y2="500" />
+    <line x1="0" y1="600" x2="600" y2="600" />
+  </g>
+
+  <!-- Stylized Geometric Developer Silhouette Portrait -->
+  <g filter="url(#shadow)">
+    <!-- Outer Aura Ring -->
+    <circle cx="300" cy="270" r="165" fill="none" stroke="#687548" stroke-width="2" stroke-dasharray="8 6" opacity="0.4" />
+    <circle cx="300" cy="270" r="150" fill="url(#glowGrad)" />
+
+    <!-- Shoulders & Torso -->
+    <path d="M140 640 C140 470, 200 420, 300 420 C400 420, 460 470, 460 640 Z" fill="url(#charcoalGrad)" />
+    <!-- Collar / Blazer Detail -->
+    <path d="M260 420 L300 520 L340 420 Z" fill="#F8F8F4" opacity="0.95" />
+    <path d="M300 480 L300 640" stroke="#E5E6DC" stroke-width="3" opacity="0.6" />
+
+    <!-- Head & Neck -->
+    <rect x="270" y="340" width="60" height="90" rx="16" fill="#D2C3B0" />
+    <!-- Face Silhouette -->
+    <path d="M225 240 C225 150, 375 150, 375 240 C375 320, 350 370, 300 370 C250 370, 225 320, 225 240 Z" fill="#E2D4C1" />
+    <!-- Modern Styled Hair -->
+    <path d="M215 220 C210 130, 290 120, 385 135 C385 135, 395 190, 375 220 C360 170, 250 170, 215 220 Z" fill="url(#charcoalGrad)" />
+    <!-- Minimalist Eyewear / Modern Glasses Frame in Olive -->
+    <rect x="235" y="235" width="55" height="35" rx="8" fill="none" stroke="#687548" stroke-width="4.5" />
+    <rect x="310" y="235" width="55" height="35" rx="8" fill="none" stroke="#687548" stroke-width="4.5" />
+    <line x1="290" y1="250" x2="310" y2="250" stroke="#687548" stroke-width="4" />
+  </g>
+
+  <!-- Floating UI Elements on the Portrait -->
+  <g transform="translate(60, 80)">
+    <rect width="180" height="42" rx="12" fill="#FFFFFF" stroke="#E5E6DC" stroke-width="1.5" />
+    <circle cx="24" cy="21" r="5" fill="#687548" />
+    <text x="38" y="25" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="700" fill="#252820">Muhammad Faizan</text>
+  </g>
+
+  <g transform="translate(360, 560)">
+    <rect width="190" height="46" rx="14" fill="#687548" filter="url(#shadow)" />
+    <text x="95" y="28" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" font-weight="700" fill="#F8F8F4" text-anchor="middle">Frontend Specialist</text>
+  </g>
+</svg>
+
