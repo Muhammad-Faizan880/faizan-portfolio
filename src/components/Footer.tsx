@@ -60,17 +60,12 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
+        <div className="pt-8 flex justify-center items-center mx-auto gap-4 text-xs text-muted">
           <p>
             © {CURRENT_YEAR} {PERSONAL_INFO.name}. Built with React, TypeScript & Tailwind CSS v4.
           </p>
 
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-olive" />
-              Strict Olive & Sage Color Architecture
-            </span>
-          </div>
+         
         </div>
       </div>
     </footer>
