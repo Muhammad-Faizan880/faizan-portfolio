@@ -2,6 +2,8 @@ import React from 'react';
 import { ArrowUp } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -60,7 +62,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#5E6455]">
           <p>
-            © {new Date().getFullYear()} {PERSONAL_INFO.name}. Built with React, TypeScript & Tailwind CSS v4.
+            © {CURRENT_YEAR} {PERSONAL_INFO.name}. Built with React, TypeScript & Tailwind CSS v4.
           </p>
 
           <div className="flex items-center gap-4">
