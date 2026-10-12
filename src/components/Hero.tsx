@@ -115,13 +115,58 @@ export const Hero: React.FC = () => {
         }}
       />
 
-      {/* Atmospheric Ambient Light Olive Gradient Spheres */}
-      <div className="absolute -top-10 -left-10 w-[550px] h-[550px] bg-gradient-to-br from-[#A5C869]/25 via-[#82A24F]/15 to-transparent rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/4 right-0 w-[650px] h-[650px] bg-gradient-to-bl from-[#687548]/30 via-[#97B863]/20 to-transparent rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-10 left-1/3 w-[500px] h-[350px] bg-gradient-to-t from-[#B0CD88]/25 via-transparent to-transparent rounded-full blur-2xl pointer-events-none" />
+      {/* Enhanced Radiant Olive Green Center Surf Glow & Living Wave Aurora */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none z-1 flex items-center justify-center">
+        {/* 1. Slowly Rotating Liquid Olive Aurora Beam */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 32, ease: "linear" }}
+          className="w-[750px] sm:w-[980px] lg:w-[1200px] h-[750px] sm:h-[980px] lg:h-[1200px] rounded-full opacity-60 blur-[110px]"
+          style={{
+            background:
+              "conic-gradient(from 0deg at 50% 50%, rgba(104,117,72,0.08) 0deg, rgba(142,168,88,0.45) 75deg, rgba(82,94,55,0.12) 150deg, rgba(163,198,99,0.5) 230deg, rgba(104,117,72,0.12) 310deg, rgba(104,117,72,0.08) 360deg)",
+          }}
+        />
+
+        {/* 2. Pulsing Luminous Wave Surge Core */}
+        <motion.div
+          animate={{
+            scale: [0.95, 1.05, 0.95],
+            opacity: [0.55, 0.8, 0.55],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 6,
+            ease: "easeInOut",
+          }}
+          className="absolute w-[620px] sm:w-[840px] lg:w-[1020px] h-[270px] sm:h-[360px] lg:h-[420px] rounded-[100%] bg-gradient-to-r from-[#687548]/45 via-[#687548]/65 to-[#687548]/45 blur-[80px]"
+        />
+
+        {/* 3. Intense Luminous Surf Crest Center Highlight */}
+        <div className="absolute w-[360px] sm:w-[520px] lg:w-[680px] h-[130px] sm:h-[180px] lg:h-[220px] rounded-full bg-gradient-to-r from-[#88A84A]/40 via-[#687548]/70 to-[#88A84A]/40 blur-[45px]" />
+
+     
+
+        {/* 5. Subtle Floating Ambient Light Embers in Olive */}
+        <motion.div
+          animate={{ y: [-8, 8, -8], opacity: [0.4, 0.9, 0.4] }}
+          transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
+          className="absolute -top-16 left-1/4 w-2 h-2 rounded-full bg-[#687548] blur-[1px] shadow-[0_0_12px_#A3C663]"
+        />
+        <motion.div
+          animate={{ y: [8, -8, 8], opacity: [0.35, 0.85, 0.35] }}
+          transition={{ repeat: Infinity, duration: 5.5, delay: 1, ease: "easeInOut" }}
+          className="absolute top-16 right-1/4 w-2.5 h-2.5 rounded-full bg-[#687548] blur-[1px] shadow-[0_0_14px_#8FA858]"
+        />
+        <motion.div
+          animate={{ y: [-6, 6, -6], opacity: [0.3, 0.75, 0.3] }}
+          transition={{ repeat: Infinity, duration: 6, delay: 2, ease: "easeInOut" }}
+          className="absolute -bottom-12 left-1/3 w-2 h-2 rounded-full bg-[#687548] blur-[1px] shadow-[0_0_10px_#A3C663]"
+        />
+      </div>
 
       {/* Main Hero Content Area - Centered and Compact */}
-      <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col justify-center py-2 sm:py-3 lg:py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col justify-center py-2 sm:py-3 lg:py-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-center">
           {/* LEFT COLUMN: Title, Description, Pills, CTAs, Metrics (lg:col-span-5) */}
           <div className="lg:col-span-5 space-y-3.5 sm:space-y-4">
@@ -130,7 +175,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-[#CAD6BA] shadow-2xs"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full mt-2 sm:mt-0 bg-white/90 backdrop-blur-md border border-[#CAD6BA] shadow-2xs"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#687548] opacity-75" />
@@ -161,39 +206,13 @@ export const Hero: React.FC = () => {
               </h1>
 
               {/* Engaging Description */}
-              <p className="text-sm sm:text-base text-[#4E5B3D] max-w-xl leading-relaxed font-normal pt-0.5">
+              <p className="text-sm sm:text-base text-black max-w-xl leading-relaxed font-normal pt-0.5">
                 Crafting responsive, high-performance web applications with
                 obsessive attention to UI craft. Turning complex Figma designs
                 into pixel-perfect, accessible code.
               </p>
             </motion.div>
 
-            {/* Core Tech Stack Quick Pills */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.16 }}
-              className="flex flex-wrap items-center gap-1.5 pt-0.5"
-            >
-              <span className="text-[11px] font-mono font-bold text-[#687548] mr-1 uppercase">
-                Core Stack:
-              </span>
-              {[
-                "React 19",
-                "Next.js 15",
-                "TypeScript",
-                "Tailwind CSS v4",
-                "Framer Motion",
-                "REST APIs",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2.5 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-white/85 border border-[#CAD6BA] text-[#343F24] hover:border-[#687548] hover:text-[#182011] hover:bg-white transition-all cursor-default shadow-2xs"
-                >
-                  {tech}
-                </span>
-              ))}
-            </motion.div>
 
             {/* Action CTAs */}
             <motion.div
@@ -222,67 +241,64 @@ export const Hero: React.FC = () => {
 
               {/* Social Quick Links */}
               <div className="flex items-center gap-1.5 ml-1">
-                <a
-                  href={PERSONAL_INFO.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-full bg-white/85 border border-[#CAD6BA] text-[#4A5734] hover:text-[#182011] hover:border-[#687548] hover:bg-white transition-all shadow-2xs"
-                  aria-label="GitHub Profile"
-                >
-                  <GithubLogo className="w-3.5 h-3.5" />
-                </a>
+               
                 <a
                   href={PERSONAL_INFO.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-full bg-white/85 border border-[#CAD6BA] text-[#4A5734] hover:text-[#182011] hover:border-[#687548] hover:bg-white transition-all shadow-2xs"
+                  className="p-2 rounded-full bg-white/85 border border-[#CAD6BA] text-[#4A5734] hover:text-[#182011] hover:border-[#687548] hover:bg-white transition-all shadow-2xs"
                   aria-label="LinkedIn Profile"
                 >
-                  <LinkedinLogo className="w-3.5 h-3.5" />
+                  <LinkedinLogo className="w-5 h-5  " />
                 </a>
               </div>
             </motion.div>
 
             {/* Stats Metrics Counter Grid */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="pt-3 border-t border-[#CAD6BA] grid grid-cols-4 gap-2 sm:gap-4 max-w-lg"
-            >
-              <div>
-                <p className="text-xl sm:text-2xl font-extrabold text-[#182011] font-mono tracking-tight">
-                  <AnimatedCounter value={3} suffix="+" />
-                </p>
-                <p className="text-[10.5px] text-[#637050] font-medium mt-0.5 leading-tight">
-                  Years Exp
-                </p>
-              </div>
-              <div>
-                <p className="text-xl sm:text-2xl font-extrabold text-[#687548] font-mono tracking-tight">
-                  <AnimatedCounter value={15} suffix="+" />
-                </p>
-                <p className="text-[10.5px] text-[#637050] font-medium mt-0.5 leading-tight">
-                  Shipped Works
-                </p>
-              </div>
-              <div>
-                <p className="text-xl sm:text-2xl font-extrabold text-[#182011] font-mono tracking-tight">
-                  <AnimatedCounter value={99} suffix="/100" />
-                </p>
-                <p className="text-[10.5px] text-[#637050] font-medium mt-0.5 leading-tight">
-                  Lighthouse
-                </p>
-              </div>
-              <div>
-                <p className="text-xl sm:text-2xl font-extrabold text-[#687548] font-mono tracking-tight">
-                  &lt; 0.8s
-                </p>
-                <p className="text-[10.5px] text-[#637050] font-medium mt-0.5 leading-tight">
-                  Sub-Sec LCP
-                </p>
-              </div>
-            </motion.div>
+        
+<motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.6, delay: 0.3 }}
+  className="pt-3 border-t border-[#CAD6BA] grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-lg"
+>
+  <div>
+    <p className="text-xl sm:text-2xl font-extrabold text-[#182011] font-mono tracking-tight">
+      <AnimatedCounter value={3} suffix="+" />
+    </p>
+    <p className="text-[10.5px] text-[#637050] font-medium mt-0.5 leading-tight">
+      Years Exp
+    </p>
+  </div>
+
+  <div>
+    <p className="text-xl sm:text-2xl font-extrabold text-[#687548] font-mono tracking-tight">
+      <AnimatedCounter value={15} suffix="+" />
+    </p>
+    <p className="text-[10.5px] text-[#637050] font-medium mt-0.5 leading-tight">
+      Shipped Works
+    </p>
+  </div>
+
+  <div>
+    <p className="text-xl sm:text-2xl font-extrabold text-[#182011] font-mono tracking-tight">
+      <AnimatedCounter value={92} suffix="/100" />
+    </p>
+    <p className="text-[10.5px] text-[#637050] font-medium mt-0.5 leading-tight">
+      Lighthouse
+    </p>
+  </div>
+
+  <div>
+    <p className="text-xl sm:text-2xl font-extrabold text-[#687548] font-mono tracking-tight">
+      Fast
+    </p>
+    <p className="text-[10.5px] text-[#637050] font-medium mt-0.5 leading-tight">
+      Optimized Performance
+    </p>
+  </div>
+</motion.div>
+
           </div>
 
           {/* RIGHT COLUMN: 700px x 500px Responsive Video Player (lg:col-span-7) */}
