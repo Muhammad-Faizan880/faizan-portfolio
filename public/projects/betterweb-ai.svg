@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" style="background:#f8faf9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <defs>
+    <!-- Background Gradient Blobs -->
+    <radialGradient id="blob-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2de6c6" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#2de6c6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blob-purple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b2a6f1" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#b2a6f1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blob-blue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Card Shadow Filter -->
+    <filter id="card-shadow" x="-10%" y="-10%" width="125%" height="130%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#13211f" flood-opacity="0.08"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#13211f" flood-opacity="0.04"/>
+    </filter>
+
+    <filter id="float-shadow" x="-15%" y="-15%" width="135%" height="140%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#0d9488" flood-opacity="0.12"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#13211f" flood-opacity="0.06"/>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="btn-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2de6c6"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+
+    <linearGradient id="text-teal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="50%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#2de6c6"/>
+    </linearGradient>
+
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fcfdfd"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ambient Glowing Blobs -->
+  <circle cx="1180" cy="180" r="380" fill="url(#blob-cyan)"/>
+  <circle cx="180" cy="720" r="420" fill="url(#blob-purple)"/>
+  <circle cx="850" cy="650" r="320" fill="url(#blob-blue)"/>
+  <circle cx="220" cy="160" r="280" fill="url(#blob-cyan)" opacity="0.4"/>
+
+  <!-- Top Navigation Bar -->
+  <g id="navbar">
+    <rect x="0" y="0" width="1440" height="88" fill="#ffffff" fill-opacity="0.75" />
+    <line x1="0" y1="88" x2="1440" y2="88" stroke="#e6ece9" stroke-width="1.2"/>
+
+    <!-- BetterWeb Logo -->
+    <image href="data:image/png;base64,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" x="72" y="22" width="156" height="44" preserveAspectRatio="xMidYMid meet"/>
+
+    <!-- Nav Items -->
+    <g transform="translate(420, 50)" font-size="15" font-weight="600" fill="#3d4d4a" letter-spacing="-0.2px">
+      <text x="0" y="0" fill="#13211f">Platform</text>
+      <text x="96" y="0">Agents</text>
+      <text x="180" y="0">AI Receptionist</text>
+      <text x="316" y="0">Industries</text>
+      <text x="420" y="0">How It Works</text>
+      <text x="548" y="0">Pricing</text>
+    </g>
+
+    <!-- Nav Right Action -->
+    <g transform="translate(1220, 26)">
+      <rect x="0" y="0" width="148" height="42" rx="21" fill="#13211f"/>
+      <text x="74" y="26" text-anchor="middle" font-size="14" font-weight="600" fill="#ffffff" letter-spacing="0.2px">Book a Demo</text>
+    </g>
+    <g transform="translate(1148, 36)">
+      <circle cx="18" cy="12" r="14" fill="#eef3f1"/>
+      <text x="18" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="#2d3f3c">EN</text>
+    </g>
+  </g>
+
+  <!-- Hero Content Area -->
+  <g transform="translate(0, 140)">
+    <!-- Pill Badge -->
+    <g transform="translate(720, 10)">
+      <rect x="-260" y="0" width="520" height="36" rx="18" fill="#ffffff" stroke="#2de6c6" stroke-width="1.5" filter="url(#card-shadow)"/>
+      <circle cx="-236" cy="18" r="5" fill="#2de6c6"/>
+      <text x="0" y="23" text-anchor="middle" font-size="13" font-weight="600" fill="#13211f" letter-spacing="-0.1px">
+        The AI team that does the work • With a real person behind it
+      </text>
+    </g>
+
+    <!-- Main Headline -->
+    <text x="720" y="105" text-anchor="middle" font-size="52" font-weight="800" fill="#13211f" letter-spacing="-1.5px">
+      Your AI team. <tspan fill="url(#text-teal)">One platform.</tspan>
+    </text>
+
+    <!-- Subtitle -->
+    <text x="720" y="152" text-anchor="middle" font-size="19" font-weight="500" fill="#586966" letter-spacing="-0.3px">
+      BetterWeb puts AI to work in your business: phone, Google, ads, and website security.
+    </text>
+  </g>
+
+  <!-- Center Stage: Website Audit Input & Command Bar -->
+  <g transform="translate(360, 330)">
+    <rect x="0" y="0" width="720" height="74" rx="24" fill="#ffffff" stroke="#d5e3de" stroke-width="1.5" filter="url(#float-shadow)"/>
+    
+    <g transform="translate(28, 25)">
+      <!-- Globe Icon -->
+      <circle cx="12" cy="12" r="10" fill="none" stroke="#0d9488" stroke-width="2"/>
+      <ellipse cx="12" cy="12" rx="5" ry="10" fill="none" stroke="#0d9488" stroke-width="1.5"/>
+      <line x1="2" y1="12" x2="22" y2="12" stroke="#0d9488" stroke-width="1.5"/>
+      <text x="36" y="18" font-size="17" font-weight="500" fill="#13211f">https://betterweb.ai</text>
+    </g>
+
+    <!-- Grade My Website Button -->
+    <g transform="translate(506, 12)">
+      <rect x="0" y="0" width="200" height="50" rx="16" fill="url(#btn-grad)"/>
+      <text x="100" y="31" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff" letter-spacing="-0.2px">
+        Grade My Website →
+      </text>
+    </g>
+  </g>
+
+  <!-- Feature Cards Grid (3 Core AI Agent Modules) -->
+  <g transform="translate(100, 445)">
+    <!-- Card 1: AI Phone Receptionist -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="380" height="230" rx="24" fill="url(#card-grad)" stroke="#d9e6e1" stroke-width="1.5" filter="url(#card-shadow)"/>
+      
+      <!-- Card Header -->
+      <g transform="translate(24, 24)">
+        <rect x="0" y="0" width="48" height="48" rx="14" fill="#e6fbf6"/>
+        <!-- Phone Wave Icon -->
+        <path d="M18 16c0 6.6 5.4 12 12 12m-12-8c0 4.4 3.6 8 8 8" fill="none" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M16 26a2 2 0 0 1-2-2v-2a10 10 0 0 1 10-10h2a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1a8 8 0 0 0-7 7v1a2 2 0 0 1-2 2z" fill="#0d9488"/>
+        
+        <text x="64" y="22" font-size="17" font-weight="800" fill="#13211f">AI Phone Receptionist</text>
+        <g transform="translate(64, 30)">
+          <circle cx="4" cy="7" r="4" fill="#10b981"/>
+          <text x="14" y="11" font-size="12" font-weight="600" fill="#0d9488">24/7 Live Agent • Zero Missed Calls</text>
+        </g>
+      </g>
+
+      <!-- Stat Highlight -->
+      <g transform="translate(24, 98)">
+        <rect x="0" y="0" width="332" height="66" rx="14" fill="#f4faf8" stroke="#e0ece7" stroke-width="1"/>
+        <text x="16" y="26" font-size="12" font-weight="600" fill="#586966">Calls Handled This Week</text>
+        <text x="16" y="52" font-size="22" font-weight="800" fill="#13211f">148 <tspan font-size="13" font-weight="600" fill="#0d9488">+34.2% leads converted</tspan></text>
+      </g>
+
+      <!-- Footer Badge -->
+      <g transform="translate(24, 182)">
+        <text x="0" y="16" font-size="12" font-weight="600" fill="#0d9488">✓ Instant SMS Confirmation</text>
+        <text x="180" y="16" font-size="12" font-weight="600" fill="#0d9488">✓ Calendar Sync</text>
+      </g>
+    </g>
+
+    <!-- Card 2: Google Profile & SEO Visibility -->
+    <g transform="translate(430, 0)">
+      <rect x="0" y="0" width="380" height="230" rx="24" fill="url(#card-grad)" stroke="#d9e6e1" stroke-width="1.5" filter="url(#card-shadow)"/>
+      
+      <!-- Card Header -->
+      <g transform="translate(24, 24)">
+        <rect x="0" y="0" width="48" height="48" rx="14" fill="#f0edf9"/>
+        <!-- Star / Map Pin Icon -->
+        <path d="M24 14l3.1 6.3 6.9 1-5 4.9 1.2 6.8L24 29.8l-6.2 3.2 1.2-6.8-5-4.9 6.9-1z" fill="#7c3aed"/>
+        
+        <text x="64" y="22" font-size="17" font-weight="800" fill="#13211f">Google Profile & SEO</text>
+        <g transform="translate(64, 30)">
+          <circle cx="4" cy="7" r="4" fill="#7c3aed"/>
+          <text x="14" y="11" font-size="12" font-weight="600" fill="#7c3aed">Local Map Pack • #1 Rank</text>
+        </g>
+      </g>
+
+      <!-- Stat Highlight -->
+      <g transform="translate(24, 98)">
+        <rect x="0" y="0" width="332" height="66" rx="14" fill="#f7f5fc" stroke="#e8e3f5" stroke-width="1"/>
+        <text x="16" y="26" font-size="12" font-weight="600" fill="#586966">Verified Customer Rating</text>
+        <text x="16" y="52" font-size="22" font-weight="800" fill="#13211f">4.9 ★ <tspan font-size="13" font-weight="600" fill="#7c3aed">380+ 5-star reviews</tspan></text>
+      </g>
+
+      <!-- Footer Badge -->
+      <g transform="translate(24, 182)">
+        <text x="0" y="16" font-size="12" font-weight="600" fill="#7c3aed">✓ Auto Review Reply</text>
+        <text x="170" y="16" font-size="12" font-weight="600" fill="#7c3aed">✓ Weekly Blog Posts</text>
+      </g>
+    </g>
+
+    <!-- Card 3: Security & Performance Audit Scorecard -->
+    <g transform="translate(860, 0)">
+      <rect x="0" y="0" width="380" height="230" rx="24" fill="url(#card-grad)" stroke="#d9e6e1" stroke-width="1.5" filter="url(#card-shadow)"/>
+      
+      <!-- Card Header -->
+      <g transform="translate(24, 24)">
+        <rect x="0" y="0" width="48" height="48" rx="14" fill="#e6f3fa"/>
+        <!-- Shield Lock Icon -->
+        <path d="M24 14l10 4.5v6c0 6.5-4.3 12.6-10 14.5-5.7-1.9-10-8-10-14.5v-6z" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M21 24l2.5 2.5 5.5-5.5" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round"/>
+        
+        <text x="64" y="22" font-size="17" font-weight="800" fill="#13211f">Security & Speed Health</text>
+        <g transform="translate(64, 30)">
+          <circle cx="4" cy="7" r="4" fill="#0284c7"/>
+          <text x="14" y="11" font-size="12" font-weight="600" fill="#0284c7">Live SSL • Edge Cloud CDN</text>
+        </g>
+      </g>
+
+      <!-- Stat Highlight -->
+      <g transform="translate(24, 98)">
+        <rect x="0" y="0" width="332" height="66" rx="14" fill="#f0f7fb" stroke="#dbeef7" stroke-width="1"/>
+        <text x="16" y="26" font-size="12" font-weight="600" fill="#586966">Performance Grade</text>
+        <text x="16" y="52" font-size="22" font-weight="800" fill="#13211f">98 / 100 <tspan font-size="13" font-weight="600" fill="#0284c7">Sub-second LCP speed</tspan></text>
+      </g>
+
+      <!-- Footer Badge -->
+      <g transform="translate(24, 182)">
+        <text x="0" y="16" font-size="12" font-weight="600" fill="#0284c7">✓ Account Manager Checked</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom Proof Bar -->
+  <g transform="translate(720, 755)">
+    <rect x="-340" y="0" width="680" height="48" rx="24" fill="#ffffff" stroke="#e0ece7" stroke-width="1.2" filter="url(#card-shadow)"/>
+    <text x="0" y="29" text-anchor="middle" font-size="13.5" font-weight="600" fill="#4a5c59" letter-spacing="-0.1px">
+      Trusted by local service businesses, clinics, and firms across 14 cities worldwide
+    </text>
+  </g>
+</svg>

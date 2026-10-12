@@ -85,7 +85,7 @@ export const TextCycler: React.FC<{ phrases: string[]; interval?: number }> = ({
           animate={{ y: '0%', opacity: 1, filter: 'blur(0px)' }}
           exit={{ y: '-100%', opacity: 0, filter: 'blur(4px)' }}
           transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-block font-extrabold text-[#687548] whitespace-nowrap"
+          className="inline-block font-extrabold text-olive whitespace-nowrap"
         >
           {phrases[index]}
         </motion.span>

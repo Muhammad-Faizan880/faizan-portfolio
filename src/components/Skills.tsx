@@ -6,10 +6,8 @@ import {
   Palette,
   Cpu,
   CheckCircle2,
-  Settings2,
-  FileCode2,
-  GitBranch,
   Terminal,
+  ArrowRight,
 } from 'lucide-react';
 import { SKILL_CATEGORIES } from '../data/portfolioData';
 import { TiltContainer } from './MotionHelper';
@@ -20,38 +18,36 @@ export const Skills: React.FC = () => {
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
       case 'code':
-        return <Code2 className="w-5 h-5 text-[#687548]" />;
+        return <Code2 className="w-5 h-5 text-olive" />;
       case 'layers':
-        return <Layers className="w-5 h-5 text-[#687548]" />;
+        return <Layers className="w-5 h-5 text-olive" />;
       case 'palette':
-        return <Palette className="w-5 h-5 text-[#687548]" />;
+        return <Palette className="w-5 h-5 text-olive" />;
       case 'cpu':
-        return <Cpu className="w-5 h-5 text-[#687548]" />;
+        return <Cpu className="w-5 h-5 text-olive" />;
       default:
-        return <Code2 className="w-5 h-5 text-[#687548]" />;
+        return <Code2 className="w-5 h-5 text-olive" />;
     }
   };
 
   const activeCategory = SKILL_CATEGORIES[activeCategoryIndex];
 
   return (
-    <section id="skills" className="py-24 md:py-32 border-t border-[#E5E6DC] relative bg-[#F8F8F4]">
+    <section id="skills" className="py-24 md:py-32 border-t border-sage relative bg-offwhite">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F0F3E8] border border-[#E5E6DC] text-xs font-bold text-[#687548] mb-3 uppercase tracking-wider font-mono">
-            Engineering Matrix
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#252820] leading-tight">
-            Battle-tested technical stack & engineering standards.
+        <div className="max-w-3xl mb-10 sm:mb-12">
+         
+          <h2 className="max-w-3xl text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-charcoal leading-[1.12]">
+            Battle-tested technical stack &amp; <span className="text-olive">engineering standards.</span>
           </h2>
-          <p className="mt-3 text-base text-[#5E6455] leading-relaxed">
-            Organized by functional domains with concrete production implementations. Every tool is backed by 3 years of commercial shipping experience.
-          </p>
+         
         </div>
 
-        {/* Interactive Domain Navigator */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+     
+
+        {/* Interactive Domain Navigator (Affordance-driven selector) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
           {SKILL_CATEGORIES.map((cat, idx) => {
             const isActive = idx === activeCategoryIndex;
             return (
@@ -59,27 +55,73 @@ export const Skills: React.FC = () => {
                 key={cat.category}
                 type="button"
                 onClick={() => setActiveCategoryIndex(idx)}
-                className={`p-4 sm:p-5 rounded-2xl text-left transition-all border flex flex-col justify-between cursor-pointer ${
+                className={`relative p-4 sm:p-5 rounded-2xl text-left transition-all border flex flex-col justify-between cursor-pointer group ${
                   isActive
-                    ? 'bg-[#FFFFFF] border-[#687548] shadow-md ring-2 ring-[#687548]/10'
-                    : 'bg-[#FFFFFF]/70 border-[#E5E6DC] hover:bg-[#FFFFFF] hover:border-[#687548]/50'
+                    ? 'bg-white border-olive shadow-md ring-2 ring-olive/20 -translate-y-0.5'
+                    : 'bg-white/70 border-sage hover:bg-white hover:border-olive/50 hover:-translate-y-0.5 hover:shadow-xs'
                 }`}
               >
+                {/* Floating Hover Tooltip */}
+                <div className="absolute -top-11 left-1/2 -translate-x-1/2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none z-30 whitespace-nowrap">
+                  <div className="bg-charcoal text-offwhite text-[11px] font-mono px-3 py-1.5 rounded-xl shadow-xl border border-sage/20 flex items-center gap-1.5">
+                    {isActive ? (
+                      <>
+                        <span>Currently viewing this domain</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Click to view {cat.category}</span>
+                      </>
+                    )}
+                  </div>
+                  {/* Tooltip Caret */}
+                  <div className="w-2 h-2 bg-charcoal rotate-45 mx-auto -mt-1 border-r border-b border-sage/20" />
+                </div>
+
+                {/* Visual active bottom anchor bar */}
+                {isActive && (
+                  <div className="absolute inset-x-0 bottom-0 h-1 bg-olive rounded-b-2xl" />
+                )}
+
                 <div className="flex items-center justify-between mb-3">
-                  <div className={`p-2 rounded-xl ${isActive ? 'bg-[#F0F3E8]' : 'bg-[#F8F8F4]'}`}>
+                  <div className={`p-2 rounded-xl transition-colors ${isActive ? 'bg-olive-light' : 'bg-offwhite group-hover:bg-olive-light/60'}`}>
                     {getCategoryIcon(cat.icon)}
                   </div>
-                  <span className="text-[11px] font-mono font-bold text-[#5E6455]">
-                    0{idx + 1}
-                  </span>
+                  {isActive ? (
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-olive text-white flex items-center gap-1 shadow-2xs">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                      Active
+                    </span>
+                  ) : (
+                    <span className="text-[11px] font-mono font-bold text-muted group-hover:text-olive transition-colors">
+                      
+                    </span>
+                  )}  
                 </div>
+
                 <div>
-                  <h3 className="text-sm font-bold text-[#252820]">
+                  <h3 className="text-sm font-bold text-charcoal group-hover:text-olive transition-colors">
                     {cat.category}
                   </h3>
-                  <p className="text-[11px] text-[#5E6455] mt-0.5 truncate">
+                  <p className="text-[11px] text-muted mt-0.5 line-clamp-1">
                     {cat.description}
                   </p>
+
+                  {/* Clear affordance indicator */}
+                  <div className="pt-2.5 mt-2 border-t border-sage/60 flex items-center justify-between text-[11px] font-mono">
+                    <span className={isActive ? 'font-bold text-olive' : 'text-muted'}>
+                      {cat.skills.length} skills
+                    </span>
+                    {isActive ? (
+                      <span className="font-semibold text-olive flex items-center gap-1">
+                        Viewing below ↓
+                      </span>
+                    ) : (
+                      <span className="text-muted group-hover:text-olive flex items-center gap-1 transition-colors">
+                        Click to inspect <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
+                      </span>
+                    )}
+                  </div>
                 </div>
               </button>
             );
@@ -89,7 +131,25 @@ export const Skills: React.FC = () => {
         {/* Active Domain Detail Showcase with 3D Tilt Stage */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Interactive Competencies (7 cols) */}
-          <div className="lg:col-span-7 space-y-3.5">
+          <div className="lg:col-span-7 space-y-4">
+            {/* Dynamic Context Header connecting tabs with list */}
+            <div className="flex items-center justify-between pb-3 border-b border-sage">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-olive-light border border-sage flex items-center justify-center">
+                  {getCategoryIcon(activeCategory.icon)}
+                </div>
+                <div>
+                  
+                  <h3 className="text-sm sm:text-base font-bold text-charcoal leading-tight">
+                    {activeCategory.category} Breakdown
+                  </h3>
+                </div>
+              </div>
+              <span className="text-xs font-mono text-muted bg-white px-2.5 py-1 rounded-lg border border-sage hidden sm:inline-block">
+                4 Commercial Competencies
+              </span>
+            </div>
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeCategory.category}
@@ -102,20 +162,20 @@ export const Skills: React.FC = () => {
                 {activeCategory.skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#E5E6DC] hover:border-[#687548] shadow-2xs hover:shadow-xs transition-all group"
+                    className="p-5 rounded-2xl bg-white border border-sage hover:border-olive shadow-2xs hover:shadow-xs transition-all group"
                   >
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2.5">
-                        <span className="w-2 h-2 rounded-full bg-[#687548] group-hover:scale-125 transition-transform" />
-                        <h4 className="text-base font-bold text-[#252820]">
+                        <span className="w-2 h-2 rounded-full bg-olive group-hover:scale-125 transition-transform" />
+                        <h4 className="text-base font-bold text-charcoal">
                           {skill.name}
                         </h4>
                       </div>
-                      <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-lg bg-[#F0F3E8] text-[#687548] border border-[#E5E6DC]">
+                      <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-lg bg-olive-light text-olive border border-sage">
                         {skill.level}
                       </span>
                     </div>
-                    <p className="text-xs sm:text-sm text-[#5E6455] pl-4 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-muted pl-4 leading-relaxed">
                       {skill.note}
                     </p>
                   </div>
@@ -127,47 +187,47 @@ export const Skills: React.FC = () => {
           {/* Right Column: Interactive Code Implementation Preview (5 cols) */}
           <div className="lg:col-span-5">
             <TiltContainer maxTilt={8} className="w-full">
-              <div className="bg-[#FFFFFF] border border-[#E5E6DC] rounded-3xl p-6 shadow-md space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-[#E5E6DC]">
+              <div className="bg-white border border-sage rounded-3xl p-6 shadow-md space-y-4">
+                <div className="flex items-center justify-between pb-3 border-b border-sage">
                   <div className="flex items-center gap-2">
-                    <Terminal className="w-4 h-4 text-[#687548]" />
-                    <span className="text-xs font-mono font-bold text-[#252820]">
+                    <Terminal className="w-4 h-4 text-olive" />
+                    <span className="text-xs font-mono font-bold text-charcoal">
                       ImplementationSpec.ts
                     </span>
                   </div>
-                  <span className="text-[11px] font-mono font-bold text-[#687548] bg-[#F0F3E8] px-2 py-0.5 rounded">
+                  <span className="text-[11px] font-mono font-bold text-olive bg-olive-light px-2 py-0.5 rounded">
                     Strict Quality
                   </span>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#252820] text-[#F8F8F4] font-mono text-xs leading-relaxed overflow-x-auto space-y-1.5">
-                  <p className="text-[#E5E6DC]/60">// Domain Architecture</p>
+                <div className="p-4 rounded-xl bg-charcoal text-offwhite font-mono text-xs leading-relaxed overflow-x-auto space-y-1.5">
+                  <p className="text-sage/60">// Domain Architecture</p>
                   <p>
-                    <span className="text-[#687548]">interface</span>{' '}
-                    <span className="text-[#F8F8F4] font-bold">Standard</span> {'{'}
+                    <span className="text-olive">interface</span>{' '}
+                    <span className="text-offwhite font-bold">Standard</span> {'{'}
                   </p>
                   <p className="pl-4">
-                    domain: <span className="text-[#687548]">"{activeCategory.category}"</span>,
+                    domain: <span className="text-olive">"{activeCategory.category}"</span>,
                   </p>
                   <p className="pl-4">
-                    typeSafety: <span className="text-[#687548] font-bold">100</span>,
+                    typeSafety: <span className="text-olive font-bold">100</span>,
                   </p>
                   <p className="pl-4">
-                    accessibility: <span className="text-[#687548]">"WCAG 2.1 AA"</span>,
+                    accessibility: <span className="text-olive">"WCAG 2.1 AA"</span>,
                   </p>
                   <p className="pl-4">
-                    responsive: <span className="text-[#687548]">"320px - 4K"</span>,
+                    responsive: <span className="text-olive">"320px - 4K"</span>,
                   </p>
                   <p>{'};'}</p>
                 </div>
 
-                <div className="space-y-2 pt-2 text-xs text-[#5E6455]">
+                <div className="space-y-2 pt-2 text-xs text-muted">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#687548]" />
+                    <CheckCircle2 className="w-4 h-4 text-olive" />
                     <span>Zero layout shifts on dynamic data hydration</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#687548]" />
+                    <CheckCircle2 className="w-4 h-4 text-olive" />
                     <span>Memoized callbacks and optimized re-render boundaries</span>
                   </div>
                 </div>
@@ -176,40 +236,6 @@ export const Skills: React.FC = () => {
           </div>
         </div>
 
-        {/* Technical Standards Callout */}
-        <div className="mt-14 bg-[#FFFFFF] border border-[#E5E6DC] rounded-3xl p-6 sm:p-10 shadow-xs">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="space-y-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#F0F3E8] border border-[#E5E6DC] flex items-center justify-center">
-                <FileCode2 className="w-5 h-5 text-[#687548]" />
-              </div>
-              <h4 className="text-base font-bold text-[#252820]">Tailwind CSS v4 Native</h4>
-              <p className="text-xs text-[#5E6455] leading-relaxed">
-                Utilizing the latest CSS-first `@theme` syntax and zero-runtime variables for instant styling without configuration bloat.
-              </p>
-            </div>
-
-            <div className="space-y-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#F0F3E8] border border-[#E5E6DC] flex items-center justify-center">
-                <Settings2 className="w-5 h-5 text-[#687548]" />
-              </div>
-              <h4 className="text-base font-bold text-[#252820]">Strict TypeScript Typing</h4>
-              <p className="text-xs text-[#5E6455] leading-relaxed">
-                Comprehensive typing across components, props, hooks, and REST responses to catch errors before code reaches production.
-              </p>
-            </div>
-
-            <div className="space-y-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#F0F3E8] border border-[#E5E6DC] flex items-center justify-center">
-                <GitBranch className="w-5 h-5 text-[#687548]" />
-              </div>
-              <h4 className="text-base font-bold text-[#252820]">Production Git Workflows</h4>
-              <p className="text-xs text-[#5E6455] leading-relaxed">
-                Trunk-based branches, semantic commits, code reviews, and remote asynchronous agility across global timezones.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

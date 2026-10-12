@@ -20,28 +20,24 @@ export const FrontendQualityShowcase: React.FC = () => {
   const currentBp = breakpoints.find((b) => b.id === activeBreakpoint) || breakpoints[2];
 
   return (
-    <section className="py-20 border-t border-[#E5E6DC] bg-[#FFFFFF] relative overflow-hidden">
+    <section className="py-20 border-t border-sage bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0F3E8] border border-[#E5E6DC] text-xs font-semibold text-[#687548] mb-3 uppercase tracking-wider">
-            Quality Assurance & Standards
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#252820]">
-            Engineered to excel across every screen and audit.
+         
+          <h2 className="max-w-3xl text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-charcoal leading-[1.12]">
+            Engineered to excel across every <span className="text-olive">screen and audit.</span>
           </h2>
-          <p className="mt-3 text-base text-[#5E6455]">
-            As a frontend engineer with 3 years of commercial experience, responsive precision and zero-defect rendering are non-negotiable.
-          </p>
+        
         </div>
 
         {/* Interactive Responsive Breakpoints Bar */}
-        <div className="bg-[#F8F8F4] border border-[#E5E6DC] rounded-3xl p-6 sm:p-8 shadow-xs">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between pb-6 border-b border-[#E5E6DC] gap-4">
+        <div className="bg-offwhite border border-sage rounded-3xl p-6 sm:p-8 shadow-xs">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between pb-6 border-b border-sage gap-4">
             <div>
-              <p className="text-xs font-bold uppercase tracking-wider text-[#252820]">
+              <p className="text-xs font-bold uppercase tracking-wider text-charcoal">
                 Responsive Testing Matrix
               </p>
-              <p className="text-xs text-[#5E6455] mt-0.5">
+              <p className="text-xs text-muted mt-0.5">
                 Simulate how layout primitives adapt across standard device viewports.
               </p>
             </div>
@@ -58,8 +54,8 @@ export const FrontendQualityShowcase: React.FC = () => {
                     onClick={() => setActiveBreakpoint(bp.id)}
                     className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
                       isActive
-                        ? 'bg-[#687548] text-[#F8F8F4] shadow-xs'
-                        : 'bg-[#FFFFFF] border border-[#E5E6DC] text-[#252820] hover:bg-[#F0F3E8]'
+                        ? 'bg-olive text-offwhite shadow-xs'
+                        : 'bg-white border border-sage text-charcoal hover:bg-olive-light'
                     }`}
                   >
                     <Icon className="w-3.5 h-3.5" />
@@ -73,48 +69,48 @@ export const FrontendQualityShowcase: React.FC = () => {
           {/* Breakpoint Detail Inspector */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-6 items-center">
             <div className="md:col-span-5 space-y-4">
-              <div className="p-4 rounded-xl bg-[#FFFFFF] border border-[#E5E6DC] space-y-2">
+              <div className="p-4 rounded-xl bg-white border border-sage space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#252820]">Target Range</span>
-                  <span className="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-[#F0F3E8] text-[#687548]">
+                  <span className="text-xs font-bold text-charcoal">Target Range</span>
+                  <span className="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-olive-light text-olive">
                     {currentBp.width}
                   </span>
                 </div>
-                <p className="text-xs text-[#5E6455] leading-relaxed">
+                <p className="text-xs text-muted leading-relaxed">
                   {currentBp.desc}
                 </p>
               </div>
 
               <div className="space-y-2">
-                <div className="flex items-center gap-2 text-xs text-[#252820]">
-                  <CheckCircle2 className="w-4 h-4 text-[#687548]" />
+                <div className="flex items-center gap-2 text-xs text-charcoal">
+                  <CheckCircle2 className="w-4 h-4 text-olive" />
                   <span>Fluid CSS clamp() typography scaling</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-[#252820]">
-                  <CheckCircle2 className="w-4 h-4 text-[#687548]" />
+                <div className="flex items-center gap-2 text-xs text-charcoal">
+                  <CheckCircle2 className="w-4 h-4 text-olive" />
                   <span>Zero horizontal scrollbar overflows guaranteed</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-[#252820]">
-                  <CheckCircle2 className="w-4 h-4 text-[#687548]" />
+                <div className="flex items-center gap-2 text-xs text-charcoal">
+                  <CheckCircle2 className="w-4 h-4 text-olive" />
                   <span>Touch-accessible minimum target sizes (&ge; 44px)</span>
                 </div>
               </div>
             </div>
 
             {/* Breakpoint Visual Frame */}
-            <div className="md:col-span-7 bg-[#FFFFFF] border border-[#E5E6DC] rounded-2xl p-4 shadow-xs">
-              <div className="flex items-center justify-between pb-3 border-b border-[#E5E6DC] text-xs font-mono text-[#5E6455]">
+            <div className="md:col-span-7 bg-white border border-sage rounded-2xl p-4 shadow-xs">
+              <div className="flex items-center justify-between pb-3 border-b border-sage text-xs font-mono text-muted">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#687548]" />
+                  <span className="w-2 h-2 rounded-full bg-olive" />
                   <span>Viewport Preview</span>
                 </div>
                 <span>CSS Grid & Flex Engine</span>
               </div>
 
               {/* Dynamic simulator viewport */}
-              <div className="mt-4 p-4 rounded-xl bg-[#F8F8F4] border border-[#E5E6DC] flex flex-col justify-center min-h-[160px]">
+              <div className="mt-4 p-4 rounded-xl bg-offwhite border border-sage flex flex-col justify-center min-h-[160px]">
                 <div
-                  className={`mx-auto bg-[#FFFFFF] border border-[#E5E6DC] rounded-lg p-3 transition-all duration-300 w-full ${
+                  className={`mx-auto bg-white border border-sage rounded-lg p-3 transition-all duration-300 w-full ${
                     activeBreakpoint === 'mobile'
                       ? 'max-w-[280px]'
                       : activeBreakpoint === 'tablet'
@@ -122,15 +118,15 @@ export const FrontendQualityShowcase: React.FC = () => {
                       : 'max-w-full'
                   }`}
                 >
-                  <div className="flex items-center justify-between pb-2 border-b border-[#E5E6DC] text-[10px] text-[#5E6455]">
-                    <span className="font-bold text-[#252820]">Navigation Surface</span>
-                    <span className="text-[#687548]">Live Grid</span>
+                  <div className="flex items-center justify-between pb-2 border-b border-sage text-[10px] text-muted">
+                    <span className="font-bold text-charcoal">Navigation Surface</span>
+                    <span className="text-olive">Live Grid</span>
                   </div>
                   <div className="grid grid-cols-2 gap-2 mt-2">
-                    <div className="h-10 bg-[#F0F3E8] rounded border border-[#E5E6DC] flex items-center justify-center text-[10px] font-mono text-[#687548]">
+                    <div className="h-10 bg-olive-light rounded border border-sage flex items-center justify-center text-[10px] font-mono text-olive">
                       Col 1
                     </div>
-                    <div className="h-10 bg-[#F0F3E8] rounded border border-[#E5E6DC] flex items-center justify-center text-[10px] font-mono text-[#687548]">
+                    <div className="h-10 bg-olive-light rounded border border-sage flex items-center justify-center text-[10px] font-mono text-olive">
                       Col 2
                     </div>
                   </div>

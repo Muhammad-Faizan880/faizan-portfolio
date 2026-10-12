@@ -13,6 +13,7 @@ export interface Project {
   featured: boolean;
   imageAlt: string;
   accentColor: string;
+  imageUrl?: string;
 }
 
 export interface ExperienceItem {
@@ -118,8 +119,9 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://betterweb.ai",
     githubUrl: "https://github.com/",
     featured: true,
-    imageAlt: "Betterweb.ai SaaS Dashboard Preview",
-    accentColor: "#687548"
+    imageAlt: "Betterweb.ai - The AI team that does the work. Platform Showcase",
+    accentColor: "#0d9488",
+    imageUrl: "/projects/betterweb-ai.jpg"
   },
   {
     id: "ease-md",
@@ -139,7 +141,8 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/",
     featured: true,
     imageAlt: "Ease MD Telehealth Interface Preview",
-    accentColor: "#525E37"
+    accentColor: "#525E37",
+    imageUrl: "/projects/ease-md.jpg"
   },
   {
     id: "a-retro-tale",
@@ -159,7 +162,8 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/",
     featured: true,
     imageAlt: "A Retro Tale Luxury Vintage Interface Preview",
-    accentColor: "#687548"
+    accentColor: "#687548",
+    imageUrl: "/projects/a-retro-tale.jpg"
   },
   {
     id: "darvesta",
@@ -179,7 +183,8 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/",
     featured: false,
     imageAlt: "Darvesta Property Portal Preview",
-    accentColor: "#525E37"
+    accentColor: "#525E37",
+    imageUrl: "/projects/darvesta.jpg"
   }
 ];
 

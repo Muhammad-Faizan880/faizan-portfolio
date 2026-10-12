@@ -156,8 +156,25 @@ export const GraphqlLogo: React.FC<LogoProps> = ({ className = "w-6 h-6" }) => (
 );
 
 export const RestApiLogo: React.FC<LogoProps> = ({ className = "w-6 h-6" }) => (
-  <svg viewBox="0 0 24 24" className={className} fill="#687548">
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
+  <svg viewBox="0 0 24 24" className={className} fill="none">
+    <rect width="24" height="24" rx="5" fill="#0284C7" />
+    {/* Request / Response bi-directional HTTP transfer arrows & endpoint nodes */}
+    <path
+      d="M5.5 8.5h9M12 5.5l3.5 3-3.5 3"
+      stroke="#FFFFFF"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M18.5 15.5h-9M12 18.5l-3.5-3 3.5-3"
+      stroke="#7DD3FC"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <circle cx="5.5" cy="8.5" r="1.5" fill="#7DD3FC" />
+    <circle cx="18.5" cy="15.5" r="1.5" fill="#FFFFFF" />
   </svg>
 );
 

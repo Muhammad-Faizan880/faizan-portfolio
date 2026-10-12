@@ -14,7 +14,7 @@ import {
   GitLogo,
   GithubLogo,
   FigmaLogo,
-  GraphqlLogo,
+  RestApiLogo,
 } from './TechLogos';
 
 export interface TechItem {
@@ -24,8 +24,8 @@ export interface TechItem {
 }
 
 const TECH_STACK_ITEMS: TechItem[] = [
-  { name: 'React 19', category: 'Library', logo: <ReactLogo className="w-5 h-5 shrink-0" /> },
-  { name: 'Next.js 15', category: 'Framework', logo: <NextjsLogo className="w-5 h-5 shrink-0" /> },
+  { name: 'React', category: 'Library', logo: <ReactLogo className="w-5 h-5 shrink-0" /> },
+  { name: 'Next.js', category: 'Framework', logo: <NextjsLogo className="w-5 h-5 shrink-0" /> },
   { name: 'TypeScript', category: 'Language', logo: <TypescriptLogo className="w-5 h-5 shrink-0 rounded-sm" /> },
   { name: 'Tailwind CSS v4', category: 'Styling', logo: <TailwindLogo className="w-5 h-5 shrink-0" /> },
   { name: 'JavaScript', category: 'ESNext', logo: <JavascriptLogo className="w-5 h-5 shrink-0 rounded-sm" /> },
@@ -35,6 +35,7 @@ const TECH_STACK_ITEMS: TechItem[] = [
   { name: 'HTML5', category: 'Markup', logo: <Html5Logo className="w-5 h-5 shrink-0" /> },
   { name: 'CSS3', category: 'Layout & FX', logo: <Css3Logo className="w-5 h-5 shrink-0" /> },
   { name: 'Node.js', category: 'Runtime', logo: <NodejsLogo className="w-5 h-5 shrink-0" /> },
+  { name: 'REST APIs', category: 'Integration', logo: <RestApiLogo className="w-5 h-5 shrink-0" /> },
   { name: 'Git', category: 'VCS', logo: <GitLogo className="w-5 h-5 shrink-0" /> },
   { name: 'GitHub', category: 'Collaboration', logo: <GithubLogo className="w-5 h-5 shrink-0" /> },
   { name: 'Figma', category: 'UI/UX Design', logo: <FigmaLogo className="w-5 h-5 shrink-0" /> },
@@ -47,11 +48,11 @@ export const TechMarquee: React.FC = () => {
   return (
     <div
       id="tech-marquee"
-      className="relative w-full py-2.5 sm:py-3 border-y border-[#CCD8BC] bg-[#EAF1DF]/90 backdrop-blur-md overflow-hidden select-none"
+      className="relative w-full py-2.5 sm:py-3 border-y border-olive-300 bg-olive-100/90 backdrop-blur-md overflow-hidden select-none"
     >
       {/* Smooth Edge Fade Masks in Light Olive Gradient */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 md:w-36 bg-gradient-to-r from-[#EAF1DF] via-[#EAF1DF]/80 to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 md:w-36 bg-gradient-to-l from-[#EAF1DF] via-[#EAF1DF]/80 to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 md:w-36 bg-gradient-to-r from-olive-100 via-olive-100/80 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 md:w-36 bg-gradient-to-l from-olive-100 via-olive-100/80 to-transparent z-10 pointer-events-none" />
 
       {/* Marquee Track */}
       <div className="flex overflow-hidden w-full">
@@ -59,16 +60,16 @@ export const TechMarquee: React.FC = () => {
           {marqueeItems.map((tech, index) => (
             <div
               key={`${tech.name}-${index}`}
-              className="inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-white/40 border border-[#D5DEC8] hover:border-[#687548] hover:bg-white hover:shadow-md transition-all duration-200 shrink-0 group cursor-default"
+              className="inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-white/40 border border-olive-300 hover:border-olive-600 hover:bg-white hover:shadow-md transition-all duration-200 shrink-0 group cursor-default"
             >
-              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-[#F3F7ED] border border-[#DEE6D2] group-hover:border-[#687548]/40 flex items-center justify-center transition-colors">
+              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-olive-50 border border-olive-200 group-hover:border-olive-600/40 flex items-center justify-center transition-colors">
                 {tech.logo}
               </div>
               <div className="flex flex-col">
-                <span className="text-xs sm:text-[12.5px] font-bold text-[#202717] tracking-tight group-hover:text-[#687548] transition-colors whitespace-nowrap">
+                <span className="text-xs sm:text-[12.5px] font-bold text-olive-950 tracking-tight group-hover:text-olive-600 transition-colors whitespace-nowrap">
                   {tech.name}
                 </span>
-                <span className="text-[12px] text-[#788467] font-mono whitespace-nowrap">
+                <span className="text-[12px] text-olive-700/80 font-mono whitespace-nowrap">
                   {tech.category}
                 </span>
               </div>

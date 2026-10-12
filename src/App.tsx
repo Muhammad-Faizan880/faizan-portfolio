@@ -11,7 +11,7 @@ import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#F8F8F4] text-[#252820] font-sans antialiased selection:bg-[#687548]/20 selection:text-[#252820] overflow-x-hidden">
+    <div className="min-h-screen bg-offwhite text-charcoal font-sans antialiased selection:bg-olive/20 selection:text-charcoal overflow-x-hidden">
       {/* Fixed Navigation */}
       <Navbar />
 
