@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -12,6 +13,9 @@ import { Footer } from './components/Footer';
 export const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-offwhite text-charcoal font-sans antialiased selection:bg-olive/20 selection:text-charcoal overflow-x-hidden">
+      {/* Vercel Real-Time Visitor Analytics */}
+      <Analytics />
+
       {/* Fixed Navigation */}
       <Navbar />
 
