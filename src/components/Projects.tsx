@@ -80,72 +80,66 @@ export const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-24 md:py-32 border-t border-sage relative bg-offwhite overflow-hidden isolate">
+    <section id="projects" className="py-16 sm:py-24 md:py-32 border-t border-sage relative bg-offwhite overflow-hidden isolate">
        {/* Ambient gradient background */}
 
-
-<div
-  className="pointer-events-none absolute inset-0 -z-10"
-  style={{
-    background: `
-      radial-gradient(
-        ellipse 950px 450px at 95% 15%,
-        rgba(192, 230, 117, 0.16),
-        transparent 70%
-      ),
-      radial-gradient(
-        ellipse 700px 500px at 100% 75%,
-        rgba(151, 184, 99, 0.13),
-        transparent 72%
-      ),
-      linear-gradient(
-        225deg,
-        rgba(248, 250, 239, 0.65),
-        rgba(255, 255, 255, 0.25)
-      )
-    `,
-  }}
-/>
-
+      <div
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background: `
+            radial-gradient(
+              ellipse 950px 450px at 95% 15%,
+              rgba(192, 230, 117, 0.16),
+              transparent 70%
+            ),
+            radial-gradient(
+              ellipse 700px 500px at 100% 75%,
+              rgba(151, 184, 99, 0.13),
+              transparent 72%
+            ),
+            linear-gradient(
+              225deg,
+              rgba(248, 250, 239, 0.65),
+              rgba(255, 255, 255, 0.25)
+            )
+          `,
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with Navigation Controls */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-5 sm:gap-6">
           <div className="max-w-2xl">
-           
-            <h2 className="max-w-3xl text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-charcoal leading-[1.12]">
+            <h2 className="max-w-3xl text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-charcoal leading-[1.15] sm:leading-[1.12]">
               Selected works engineered for <span className="text-olive">performance.</span>
             </h2>
-            
           </div>
 
           {/* Slider Controls & Counter */}
-          <div className="flex items-center gap-4 self-start md:self-end">
+   
           
 
             {/* Arrows */}
+            <div className="flex items-center justify-end gap-2">
+              <button
+                type="button"
+                onClick={handlePrev}
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white border border-sage text-charcoal hover:bg-olive hover:text-offwhite hover:border-olive transition-all duration-200 flex items-center justify-center shadow-xs active:scale-95 cursor-pointer"
+                aria-label="Previous project slide"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+
+              <button
+                type="button"
+                onClick={handleNext}
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white border border-sage text-charcoal hover:bg-olive hover:text-offwhite hover:border-olive transition-all duration-200 flex items-center justify-center shadow-xs active:scale-95 cursor-pointer"
+                aria-label="Next project slide"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
          
-<div className="flex items-center gap-2">
-  <button
-    type="button"
-    onClick={handlePrev}
-    className="w-12 h-12 rounded-2xl bg-white border border-sage text-charcoal hover:bg-olive hover:text-offwhite hover:border-olive transition-all duration-200 flex items-center justify-center shadow-xs active:scale-95 cursor-pointer"
-    aria-label="Previous project slide"
-  >
-    <ChevronLeft className="w-5 h-5" />
-  </button>
-
-  <button
-    type="button"
-    onClick={handleNext}
-    className="w-12 h-12 rounded-2xl bg-white border border-sage text-charcoal hover:bg-olive hover:text-offwhite hover:border-olive transition-all duration-200 flex items-center justify-center shadow-xs active:scale-95 cursor-pointer"
-    aria-label="Next project slide"
-  >
-    <ChevronRight className="w-5 h-5" />
-  </button>
-</div>
-
-          </div>
         </div>
 
         {/* Dynamic Project Stage (Interactive Carousel Container) */}
@@ -164,11 +158,11 @@ export const Projects: React.FC = () => {
               className="bg-white border border-sage rounded-3xl overflow-hidden shadow-lg grid grid-cols-1 lg:grid-cols-12 gap-0"
             >
               {/* Left Column: Visual Mockup Showcase (7 cols) */}
-              <div className="lg:col-span-7 bg-offwhite p-6 sm:p-10 border-b lg:border-b-0 lg:border-r border-sage flex flex-col justify-between relative group">
+              <div className="lg:col-span-7 bg-offwhite p-4 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-sage flex flex-col justify-between relative group">
                 {/* Stage Header Controls */}
-                <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-sage mb-6">
-                  <div className="flex items-center gap-2">
-                    <span className="px-3 py-1 rounded-full bg-white border border-sage text-xs font-bold text-charcoal">
+                <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 pb-4 border-b border-sage mb-4 sm:mb-6">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="px-2.5 sm:px-3 py-1 rounded-full bg-white border border-sage text-xs font-bold text-charcoal">
                       {currentProject.category}
                     </span>
                     {currentProject.featured && (
@@ -209,8 +203,8 @@ export const Projects: React.FC = () => {
                       </button>
                     </div>
 
-                    {/* Responsive Viewport Toggle */}
-                    <div className="flex items-center gap-1 p-1 bg-white border border-sage rounded-xl text-xs">
+                    {/* Responsive Viewport Toggle (Desktop vs Mobile Preview - sm screens and above) */}
+                    <div className="hidden sm:flex items-center gap-1 p-1 bg-white border border-sage rounded-xl text-xs">
                       <button
                         type="button"
                         onClick={() => setPreviewMode('desktop')}
@@ -306,7 +300,7 @@ export const Projects: React.FC = () => {
                       </div>
                     ) : (
                       /* Mobile Phone Mockup Frame */
-                      <div className="relative mx-auto w-[250px] sm:w-[270px] h-[380px] rounded-[36px] p-2.5 bg-charcoal shadow-2xl border-4 border-charcoal/90 flex flex-col group/phone transition-all duration-300">
+                      <div className="relative mx-auto w-[240px] sm:w-[270px] h-[360px] sm:h-[380px] rounded-[36px] p-2.5 bg-charcoal shadow-2xl border-4 border-charcoal/90 flex flex-col group/phone transition-all duration-300">
                         {/* Notch / Speaker */}
                         <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-4 bg-charcoal rounded-full z-20 flex items-center justify-center">
                           <div className="w-2 h-2 rounded-full bg-charcoal/80 border border-white/20 mr-1.5" />
@@ -314,14 +308,16 @@ export const Projects: React.FC = () => {
                         </div>
 
                         {/* Phone Screen */}
-                        <div className="w-full h-full rounded-[28px] overflow-hidden bg-offwhite relative flex flex-col">
+                        <div className="w-full h-full rounded-[28px] overflow-hidden bg-white relative flex flex-col justify-center items-center">
                           {currentProject.imageUrl ? (
-                            <img
-                              src={currentProject.imageUrl}
-                              alt={currentProject.imageAlt || currentProject.title}
-                              loading="lazy"
-                              className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/phone:scale-105"
-                            />
+                            <div className="w-full h-full flex items-center justify-center p-3 bg-[#f7f9f7]">
+                              <img
+                                src={currentProject.imageUrl}
+                                alt={currentProject.imageAlt || currentProject.title}
+                                loading="lazy"
+                                className="w-full h-auto max-h-full object-contain rounded-lg shadow-xs transition-transform duration-700 ease-out group-hover/phone:scale-105"
+                              />
+                            </div>
                           ) : (
                             <ProjectCardPreview projectId={currentProject.id} />
                           )}
@@ -349,7 +345,7 @@ export const Projects: React.FC = () => {
                       className={`transition-all duration-300 rounded-2xl border border-sage bg-white shadow-sm overflow-hidden w-full ${
                         previewMode === 'mobile'
                           ? 'max-w-[340px] h-[360px]'
-                          : 'max-w-full h-[360px]'
+                          : 'max-w-full h-[320px] sm:h-[360px]'
                       }`}
                     >
                       <ProjectCardPreview projectId={currentProject.id} />
@@ -358,24 +354,24 @@ export const Projects: React.FC = () => {
                 </div>
 
                 {/* Inspect Case Study Button Trigger */}
-                <div className="pt-6 flex items-center justify-between">
+                <div className="pt-4 mt-2 border-t border-sage/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <button
                     type="button"
                     onClick={() => setActiveModalProject(currentProject)}
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-sage text-xs font-bold text-charcoal hover:bg-olive-light hover:border-olive transition-colors shadow-2xs cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-sage text-xs font-bold text-charcoal hover:bg-olive-light hover:border-olive transition-colors shadow-2xs cursor-pointer w-full sm:w-auto"
                   >
-                    <Eye className="w-4 h-4 text-olive" />
+                    <Eye className="w-4 h-4 text-olive shrink-0" />
                     <span>Deep Architecture Inspection</span>
                   </button>
 
-                  <span className="text-xs font-mono text-muted">
+                  <span className="text-xs font-mono text-muted text-center sm:text-right shrink-0">
                     LCP &lt; 0.9s Verified
                   </span>
                 </div>
               </div>
 
               {/* Right Column: Case Details & Engineering Deliverables (5 cols) */}
-              <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between space-y-6">
+              <div className="lg:col-span-5 p-5 sm:p-8 lg:p-10 flex flex-col justify-between space-y-6">
                 <div>
                   <div className="flex items-center justify-between pb-3 border-b border-sage mb-4">
                     <span className="text-xs font-mono font-bold text-olive uppercase tracking-wider">
@@ -432,13 +428,13 @@ export const Projects: React.FC = () => {
                 </div>
 
                 {/* Actions */}
-                <div className="pt-6 border-t border-sage flex flex-wrap items-center gap-3">
+                <div className="pt-6 border-t border-sage flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   {currentProject.liveUrl && (
                     <a
                       href={currentProject.liveUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-bold bg-olive text-offwhite hover:bg-olive-dark transition-all shadow-xs"
+                      className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-bold bg-olive text-offwhite hover:bg-olive-dark transition-all shadow-xs flex-1 sm:flex-initial"
                     >
                       <span>Launch Live App</span>
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -448,7 +444,7 @@ export const Projects: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setActiveModalProject(currentProject)}
-                    className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl text-xs font-semibold bg-offwhite border border-sage text-charcoal hover:bg-olive-light transition-colors cursor-pointer"
+                    className="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl text-xs font-semibold bg-offwhite border border-sage text-charcoal hover:bg-olive-light transition-colors cursor-pointer flex-1 sm:flex-initial"
                   >
                     <span>Read Architecture Spec</span>
                     <ArrowUpRight className="w-3.5 h-3.5 text-olive" />
