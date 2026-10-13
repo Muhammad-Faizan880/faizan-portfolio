@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
                 {PERSONAL_INFO.name}
               </p>
               <p className="text-xs text-muted">
-                 Frontend Developer (3 Years Professional Experience)
+                 Frontend Engineer (3 Years Professional Experience)
               </p>
             </div>
           </div>

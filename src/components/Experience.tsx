@@ -134,7 +134,7 @@ export const Experience: React.FC = () => {
                   </span>
                 </div>
                 <h3 className="text-sm font-bold text-charcoal">
-                  Full Stack / Frontend Developer
+                  Full Stack / Frontend Engineer
                 </h3>
                 <div className="flex items-center gap-3 text-xs text-muted mt-2 font-mono">
                   <span>Jan 2024 — Present</span>
