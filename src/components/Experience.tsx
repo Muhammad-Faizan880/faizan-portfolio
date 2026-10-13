@@ -379,22 +379,26 @@ export const Experience: React.FC = () => {
                   >
                     <div>
                       {/* Top Bar */}
-                      <div className="flex items-center justify-between pb-3 border-b border-sage mb-3">
-                        <div className="flex items-center gap-2">
-                          <span className="px-2.5 py-0.5 rounded-full bg-olive-light border border-sage text-xs font-mono font-bold text-olive">
-                            {exp.company}
-                          </span>
-                          {isCurrent && (
-                            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-700">
-                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                              Active Role
-                            </span>
-                          )}
-                        </div>
-                        <span className="text-xs font-mono text-muted">
-                          {exp.period}
-                        </span>
-                      </div>
+                   
+<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-3 border-b border-sage mb-3">
+  <div className="flex flex-wrap items-center gap-2 min-w-0">
+    <span className="px-2.5 py-1 rounded-full bg-olive-light border border-sage text-xs font-mono font-bold text-olive break-words max-w-full">
+      {exp.company}
+    </span>
+
+    {isCurrent && (
+      <span className="inline-flex shrink-0 items-center gap-1.5 px-2 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-700">
+        <span className="w-1.5 h-1.5 shrink-0 rounded-full bg-emerald-500 animate-pulse" />
+        Active Role
+      </span>
+    )}
+  </div>
+
+  <span className="text-xs font-mono text-muted whitespace-nowrap sm:text-right">
+    {exp.period}
+  </span>
+</div>
+
 
                       <h3 className="text-lg font-extrabold text-charcoal">
                         {exp.role}

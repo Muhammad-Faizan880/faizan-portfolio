@@ -197,13 +197,13 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full mt-2 sm:mt-0 bg-white/90 backdrop-blur-md border border-olive-300 shadow-2xs"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full mt-9 sm:mt-2 bg-white/90 backdrop-blur-md border border-olive-300 shadow-2xs"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-olive-600 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-olive-600" />
               </span>
-              <span className="text-xs font-mono font-bold text-olive-800 uppercase tracking-wider">
+              <span className="sm:text-xs text-[11px] font-mono font-bold text-olive-800 uppercase tracking-wider">
                 {PERSONAL_INFO.name} • Available for Projects
               </span>
             </motion.div>
@@ -323,7 +323,7 @@ export const Hero: React.FC = () => {
                 delay: 0.15,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="relative w-full max-w-[700px] rounded-2xl sm:rounded-3xl backdrop-blur-md p-1.5 sm:p-2.5 shadow-2xl shadow-olive-600/20 transition-all duration-300 group"
+              className="mb-7 sm:mb-2 relative w-full max-w-[700px] rounded-2xl sm:rounded-3xl backdrop-blur-md p-1.5 sm:p-2.5 shadow-2xl shadow-olive-600/20 transition-all duration-300 group"
             >
               {/* The Video Container - 700px x 500px Responsive (aspect-[7/5]) */}
               <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-olive-950 aspect-[7/5] w-full max-w-[700px] max-h-[500px] flex items-center justify-center">

@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Quick links */}
-          <div className="flex items-center gap-6 text-xs font-medium text-muted">
+          <div className="flex items-center gap-[2px] sm:gap-6 text-xs font-medium text-muted">
             <a href="#about" className="text-olive-700 hover:text-olive-950 hover:bg-olive-100 p-2 rounded-full transition-colors">
               About
             </a>
