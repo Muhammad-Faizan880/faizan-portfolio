@@ -124,9 +124,12 @@ export const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden fixed inset-x-0 top-[60px] bg-olive-50/98 backdrop-blur-lg border-b border-olive-300 shadow-lg animate-in slide-in-from-top-2 duration-200">
           <div className="px-5 py-6 space-y-3">
-            <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-olive-300 text-xs text-olive-800 font-medium mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-olive-600" />
-              <span>3 Years Frontend Experience • Open to Opportunities</span>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-olive-300 text-sm text-olive-800 font-medium mb-3">
+             <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-olive-600 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-olive-600" />
+              </span>
+              <span>Available for Work</span>
             </div>
 
             <div className="grid grid-cols-1 gap-1">

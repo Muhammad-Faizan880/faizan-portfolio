@@ -193,20 +193,7 @@ export const Hero: React.FC = () => {
           {/* LEFT COLUMN: Title, Description, Pills, CTAs, Metrics (lg:col-span-5) */}
           <div className="lg:col-span-5 space-y-3.5 sm:space-y-4">
             {/* Top Status & Role Pill */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full mt-9 sm:mt-2 bg-white/90 backdrop-blur-md border border-olive-300 shadow-2xs"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-olive-600 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-olive-600" />
-              </span>
-              <span className="sm:text-xs text-[11px] font-mono font-bold text-olive-800 uppercase tracking-wider">
-                {PERSONAL_INFO.name} • Available for Projects
-              </span>
-            </motion.div>
+           
 
             {/* Bold Enhanced Headline */}
             <motion.div
@@ -217,9 +204,9 @@ export const Hero: React.FC = () => {
                 delay: 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="space-y-1.5"
+              className="space-y-1.5 mt-9 sm:mt-2"
             >
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-olive-950 leading-[1.08] font-sans">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-olive-950 leading-[1.08] font-sans">
                 FRONTEND ENGINEER
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-olive-600 via-olive-700 to-olive-800">
