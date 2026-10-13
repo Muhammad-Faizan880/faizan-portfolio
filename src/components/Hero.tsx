@@ -12,7 +12,6 @@ import {
 import { PERSONAL_INFO } from "../data/portfolioData";
 import { AnimatedCounter } from "./MotionHelper";
 import { TechMarquee } from "./TechMarquee";
-import { LinkedinLogo } from "./TechLogos";
 
 export const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -98,62 +97,94 @@ export const Hero: React.FC = () => {
       ref={heroRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative min-h-screen lg:h-screen lg:max-h-[900px] pt-14 sm:pt-16 lg:pt-18 flex flex-col justify-between overflow-hidden bg-gradient-to-br from-olive-50 via-olive-100 to-olive-200 text-olive-900 selection:bg-olive-600/20 selection:text-olive-900"
+      className="relative min-h-screen lg:h-screen lg:max-h-[900px] pt-14 sm:pt-16 lg:pt-18 flex flex-col justify-between overflow-hidden bg-gradient-to-b from-[#f7faf3] via-[#ebf3df] to-[#dde8cd] text-olive-900 selection:bg-olive-600/20 selection:text-olive-900"
     >
-      {/* Dynamic Cursor Spotlight Glow */}
+      {/* 1. Base Subtle Ambient Radial Canvas Glow */}
+   
+
+<div
+  className="pointer-events-none absolute inset-0 z-0 opacity-100"
+  style={{
+    background: `
+      radial-gradient(
+        ellipse 600px 550px at 8% 12%,
+        rgba(145, 185, 75, 0.38) 0%,
+        rgba(145, 185, 75, 0.16) 90%,
+        transparent 72%
+      ),
+      radial-gradient(
+        ellipse 350px 450px at 95% 18%,
+        rgba(112, 148, 67, 0.34) 0%,
+        rgba(112, 148, 67, 0.13) 52%,
+        transparent 75%
+      ),
+      radial-gradient(
+        ellipse 250px 500px at 48% 100%,
+        rgba(132, 166, 68, 0.30) 0%,
+        rgba(132, 166, 68, 0.12) 45%,
+        transparent 78%
+      ),
+      radial-gradient(
+        ellipse 420px 360px at 72% 58%,
+        rgba(177, 207, 113, 0.18) 0%,
+        transparent 72%
+      ),
+      linear-gradient(
+        135deg,
+        #f0f3e5 0%,
+        #e8edd9 88%,
+        #f2f4e9 100%
+      )
+    `,
+  }}
+/>
+
+
+      {/* 2. Interactive Soft Cursor Spotlight Glow */}
       <div
-        className="pointer-events-none absolute inset-0 transition-opacity duration-300 z-1"
+        className="pointer-events-none absolute inset-0 transition-opacity duration-500 z-1"
         style={{
-          background: `radial-gradient(550px circle at ${mousePos.x}px ${mousePos.y}px, rgba(142, 168, 88, 0.22), transparent 60%)`,
-          opacity: isHovered ? 1 : 0.6,
+          background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(175, 219, 98, 0.22), rgba(142, 168, 88, 0.08) 45%, transparent 75%)`,
+          opacity: isHovered ? 1 : 0.5,
         }}
       />
 
-      {/* Enhanced Radiant Olive Green Center Surf Glow & Living Wave Aurora */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none z-1 flex items-center justify-center">
-        {/* 1. Slowly Rotating Liquid Olive Aurora Beam */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ repeat: Infinity, duration: 32, ease: "linear" }}
-          className="w-[750px] sm:w-[980px] lg:w-[1200px] h-[750px] sm:h-[980px] lg:h-[1200px] rounded-full opacity-60 blur-[110px]"
-          style={{
-            background: `conic-gradient(from 0deg at 50% 50%, rgba(104,117,72,0.08) 0deg, rgba(142,168,88,0.45) 75deg, rgba(82,94,55,0.12) 150deg, rgba(163,198,99,0.5) 230deg, rgba(104,117,72,0.12) 310deg, rgba(104,117,72,0.08) 360deg)`,
-          }}
-        />
-
-        {/* 2. Pulsing Luminous Wave Surge Core */}
+      {/* 3. Smooth Living Organic Aurora Mesh System (Zero Banding, No Dots) */}
+      <div className="absolute inset-0 pointer-events-none select-none z-1 overflow-hidden">
+        {/* Aurora Layer A: Left Floating Soft Aura */}
         <motion.div
           animate={{
-            scale: [0.95, 1.05, 0.95],
-            opacity: [0.55, 0.8, 0.55],
+            x: [-25, 20, -25],
+            y: [-15, 20, -15],
+            scale: [1, 1.08, 1],
           }}
-          transition={{
-            repeat: Infinity,
-            duration: 6,
-            ease: "easeInOut",
-          }}
-          className="absolute w-[620px] sm:w-[840px] lg:w-[1020px] h-[270px] sm:h-[360px] lg:h-[420px] rounded-[100%] bg-gradient-to-r from-olive-600/45 via-olive-glow/65 to-olive-600/45 blur-[80px]"
+          transition={{ repeat: Infinity, duration: 16, ease: "easeInOut" }}
+          className="absolute -top-[10%] -left-[5%] w-[600px] sm:w-[800px] lg:w-[950px] h-[600px] sm:h-[800px] lg:h-[950px] rounded-full bg-gradient-to-br from-olive-lime/30 via-olive-400/20 to-transparent blur-[120px] lg:blur-[160px]"
         />
 
-        {/* 3. Intense Luminous Surf Crest Center Highlight */}
-        <div className="absolute w-[360px] sm:w-[520px] lg:w-[680px] h-[130px] sm:h-[180px] lg:h-[220px] rounded-full bg-gradient-to-r from-olive-500/40 via-olive-500 to-olive-500/40 blur-[45px]" />
+        {/* Aurora Layer B: Right Video Ambient Halo */}
+        <motion.div
+          animate={{
+            x: [20, -25, 20],
+            y: [15, -20, 15],
+            scale: [1.06, 0.96, 1.06],
+          }}
+          transition={{ repeat: Infinity, duration: 20, ease: "easeInOut" }}
+          className="absolute top-[5%] -right-[8%] w-[650px] sm:w-[850px] lg:w-[1050px] h-[650px] sm:h-[850px] lg:h-[1050px] rounded-full bg-gradient-to-bl from-olive-glow/35 via-olive-500/20 to-transparent blur-[130px] lg:blur-[170px]"
+        />
 
-        {/* 4. Subtle Floating Ambient Light Embers in Olive Palette */}
+        {/* Aurora Layer C: Center Connecting Horizon Wave */}
         <motion.div
-          animate={{ y: [-8, 8, -8], opacity: [0.4, 0.9, 0.4] }}
-          transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
-          className="absolute -top-16 left-1/4 w-2 h-2 rounded-full bg-olive-900 blur-[1px] shadow-[0_0_12px_var(--color-olive-400)]"
+          animate={{
+            opacity: [0.35, 0.55, 0.35],
+            scaleX: [0.96, 1.04, 0.96],
+          }}
+          transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[85vw] max-w-[1300px] h-[340px] sm:h-[420px] rounded-[100%] bg-gradient-to-r from-olive-lime/20 via-olive-bright/25 to-olive-glow/20 blur-[110px] lg:blur-[140px]"
         />
-        <motion.div
-          animate={{ y: [8, -8, 8], opacity: [0.35, 0.85, 0.35] }}
-          transition={{ repeat: Infinity, duration: 5.5, delay: 1, ease: "easeInOut" }}
-          className="absolute top-16 right-1/4 w-2.5 h-2.5 rounded-full bg-olive-900 blur-[1px] shadow-[0_0_14px_var(--color-olive-500)]"
-        />
-        <motion.div
-          animate={{ y: [-6, 6, -6], opacity: [0.3, 0.75, 0.3] }}
-          transition={{ repeat: Infinity, duration: 6, delay: 2, ease: "easeInOut" }}
-          className="absolute -bottom-12 left-1/3 w-2 h-2 rounded-full bg-olive-900 blur-[1px] shadow-[0_0_10px_var(--color-olive-400)]"
-        />
+
+        {/* Aurora Layer D: Bottom Gradient Transition to Marquee */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-olive-200/40 via-olive-100/15 to-transparent" />
       </div>
 
       {/* Main Hero Content Area - Centered and Compact */}
@@ -229,18 +260,7 @@ export const Hero: React.FC = () => {
                 <ArrowUpRight className="w-3.5 h-3.5 text-olive-600 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
 
-              {/* Social Quick Links */}
-              <div className="flex items-center gap-1.5 ml-1">
-                <a
-                  href={PERSONAL_INFO.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white/85 border border-olive-300 text-olive-700 hover:text-olive-950 hover:border-olive-600 hover:bg-white transition-all shadow-2xs"
-                  aria-label="LinkedIn Profile"
-                >
-                  <LinkedinLogo className="w-5 h-5" />
-                </a>
-              </div>
+         
             </motion.div>
 
             {/* Stats Metrics Counter Grid */}

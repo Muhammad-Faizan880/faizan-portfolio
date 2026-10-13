@@ -23,26 +23,26 @@ export const Footer: React.FC = () => {
                 {PERSONAL_INFO.name}
               </p>
               <p className="text-xs text-muted">
-                Senior Frontend Developer (3 Years Professional Experience)
+                 Frontend Developer (3 Years Professional Experience)
               </p>
             </div>
           </div>
 
           {/* Quick links */}
           <div className="flex items-center gap-6 text-xs font-medium text-muted">
-            <a href="#about" className="hover:text-olive transition-colors">
+            <a href="#about" className="text-olive-700 hover:text-olive-950 hover:bg-olive-100 p-2 rounded-full transition-colors">
               About
             </a>
-            <a href="#skills" className="hover:text-olive transition-colors">
+            <a href="#skills" className="text-olive-700 hover:text-olive-950 hover:bg-olive-100 p-2 rounded-full transition-colors">
               Skills
             </a>
-            <a href="#projects" className="hover:text-olive transition-colors">
+            <a href="#projects" className="text-olive-700 hover:text-olive-950 hover:bg-olive-100 p-2 rounded-full transition-colors">
               Projects
             </a>
-            <a href="#experience" className="hover:text-olive transition-colors">
+            <a href="#experience" className="text-olive-700 hover:text-olive-950 hover:bg-olive-100 p-2 rounded-full transition-colors">
               Experience
             </a>
-            <a href="#contact" className="hover:text-olive transition-colors">
+            <a href="#contact" className="text-olive-700 hover:text-olive-950 hover:bg-olive-100 p-2 rounded-full transition-colors">
               Contact
             </a>
           </div>

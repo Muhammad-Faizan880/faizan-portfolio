@@ -33,7 +33,8 @@ export const Skills: React.FC = () => {
   const activeCategory = SKILL_CATEGORIES[activeCategoryIndex];
 
   return (
-    <section id="skills" className="py-24 md:py-32 border-t border-sage relative bg-offwhite">
+    <section id="skills" className="py-24 md:py-32 border-t border-sage relative isolate overflow-hidden bg-white">
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-12">

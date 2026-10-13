@@ -80,7 +80,34 @@ export const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-24 md:py-32 border-t border-sage relative bg-offwhite overflow-hidden">
+    <section id="projects" className="py-24 md:py-32 border-t border-sage relative bg-offwhite overflow-hidden isolate">
+       {/* Ambient gradient background */}
+
+
+<div
+  className="pointer-events-none absolute inset-0 -z-10"
+  style={{
+    background: `
+      radial-gradient(
+        ellipse 950px 450px at 95% 15%,
+        rgba(192, 230, 117, 0.16),
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 700px 500px at 100% 75%,
+        rgba(151, 184, 99, 0.13),
+        transparent 72%
+      ),
+      linear-gradient(
+        225deg,
+        rgba(248, 250, 239, 0.65),
+        rgba(255, 255, 255, 0.25)
+      )
+    `,
+  }}
+/>
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with Navigation Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">

@@ -5,8 +5,31 @@ export const About: React.FC = () => {
   
 <section
   id="about"
-  className="relative overflow-hidden border-t border-sage py-16 md:py-24"
+  className="relative overflow-hidden border-t border-sage py-16 md:py-24 relative isolate overflow-hidden bg-offwhite"
 >
+        {/* Soft ambient background */}
+    <div
+      className="pointer-events-none absolute inset-0 -z-10"
+      style={{
+        background: `
+          radial-gradient(
+            ellipse 950px 450px at 5% 15%,
+            rgba(192, 230, 117, 0.16),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 700px 500px at 95% 75%,
+            rgba(151, 184, 99, 0.13),
+            transparent 72%
+          ),
+          linear-gradient(
+            135deg,
+            rgba(248, 250, 239, 0.65),
+            rgba(255, 255, 255, 0.25)
+          )
+        `,
+      }}
+    />
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     {/* Section Header */}
