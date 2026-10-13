@@ -105,12 +105,25 @@ export const Experience: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setSelectedId('codendcoffee')}
-                className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 cursor-pointer relative ${
+                className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 cursor-pointer relative group ${
                   selectedId === 'codendcoffee'
                     ? 'bg-white border-olive shadow-sm ring-1 ring-olive/20'
                     : 'bg-white/70 border-sage hover:bg-white hover:border-olive/50'
                 }`}
               >
+                {/* Floating Hover Tooltip */}
+                <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none z-30 whitespace-nowrap">
+                  <div className="bg-charcoal text-offwhite text-xs font-mono px-3 py-1.5 rounded-xl shadow-xl border border-sage/20 flex items-center gap-1.5">
+                    {selectedId === 'codendcoffee' ? (
+                      <span>Currently viewing CodeNdCoffee</span>
+                    ) : (
+                      <span>Click to view CodeNdCoffee</span>
+                    )}
+                  </div>
+                  {/* Tooltip Caret */}
+                  <div className="w-2 h-2 bg-charcoal rotate-45 mx-auto -mt-1 border-r border-b border-sage/20" />
+                </div>
+
                 <div className="flex items-center justify-between gap-2 mb-1.5">
                   <span className="text-xs font-mono font-bold text-olive uppercase tracking-wider">
                     CodeNdCoffee
@@ -134,12 +147,25 @@ export const Experience: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setSelectedId('spadasoft')}
-                className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 cursor-pointer relative ${
+                className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 cursor-pointer relative group ${
                   selectedId === 'spadasoft'
                     ? 'bg-white border-olive shadow-sm ring-1 ring-olive/20'
                     : 'bg-white/70 border-sage hover:bg-white hover:border-olive/50'
                 }`}
               >
+                {/* Floating Hover Tooltip */}
+                <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none z-30 whitespace-nowrap">
+                  <div className="bg-charcoal text-offwhite text-xs font-mono px-3 py-1.5 rounded-xl shadow-xl border border-sage/20 flex items-center gap-1.5">
+                    {selectedId === 'spadasoft' ? (
+                      <span>Currently viewing SpadaSoft</span>
+                    ) : (
+                      <span>Click to view SpadaSoft</span>
+                    )}
+                  </div>
+                  {/* Tooltip Caret */}
+                  <div className="w-2 h-2 bg-charcoal rotate-45 mx-auto -mt-1 border-r border-b border-sage/20" />
+                </div>
+
                 <div className="flex items-center justify-between gap-2 mb-1.5">
                   <span className="text-xs font-mono font-bold text-olive uppercase tracking-wider">
                     SpadaSoft
@@ -162,12 +188,25 @@ export const Experience: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setSelectedId('education')}
-                className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 cursor-pointer relative ${
+                className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 cursor-pointer relative group ${
                   selectedId === 'education'
                     ? 'bg-white border-olive shadow-sm ring-1 ring-olive/20'
                     : 'bg-white/70 border-sage hover:bg-white hover:border-olive/50'
                 }`}
               >
+                {/* Floating Hover Tooltip */}
+                <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none z-30 whitespace-nowrap">
+                  <div className="bg-charcoal text-offwhite text-xs font-mono px-3 py-1.5 rounded-xl shadow-xl border border-sage/20 flex items-center gap-1.5">
+                    {selectedId === 'education' ? (
+                      <span>Currently viewing BSCS Degree</span>
+                    ) : (
+                      <span>Click to view BSCS Degree</span>
+                    )}
+                  </div>
+                  {/* Tooltip Caret */}
+                  <div className="w-2 h-2 bg-charcoal rotate-45 mx-auto -mt-1 border-r border-b border-sage/20" />
+                </div>
+
                 <div className="flex items-center justify-between gap-2 mb-1.5">
                   <span className="text-xs font-mono font-bold text-olive uppercase tracking-wider">
                     PMAS Arid University

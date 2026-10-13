@@ -40,11 +40,11 @@ export interface SkillCategory {
 }
 
 export const PERSONAL_INFO = {
-  name: "Muhammad Faizan",
-  role: "Frontend Developer",
+  name: "Muhammad Fizan",
+  role: "Frontend Engineer",
   experienceYears: 3,
   headline: "Crafting responsive, high-performance web applications with obsessive attention to UI craft.",
-  bio: "Frontend engineer with 3 years of professional experience specializing in React, Next.js, TypeScript, and modern CSS architecture. I transform complex requirements into fluid, accessible, and resilient digital experiences.",
+  bio: "Frontend Engineer with 3 years of professional experience specializing in React, Next.js, TypeScript, and modern CSS architecture. I transform complex requirements into fluid, accessible, and resilient digital experiences.",
   location: "Lahore, Pakistan (Available for Global Remote)",
   email: "muhammadfizan713@gmail.com",
   phone: "+92 308 5170759",
@@ -73,7 +73,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     skills: [
       { name: "React.js", level: "Advanced", note: "Custom hooks, performance optimization, compound components" },
       { name: "Next.js", level: "Advanced", note: "App Router, SSR/SSG/ISR, Server Actions, Route Handlers" },
-      { name: "Redux Toolkit & Zustand", level: "Advanced", note: "Normalized state, selectors, predictable data flow" },
+      { name: "Redux Toolkit ", level: "Advanced", note: "Normalized state, selectors, predictable data flow" },
       { name: "Vite & Tooling", level: "Advanced", note: "Fast HMR, module bundling, modern build pipelines" }
     ]
   },
@@ -191,7 +191,7 @@ export const PROJECTS: Project[] = [
 export const EXPERIENCES: ExperienceItem[] = [
   {
     id: "codendcoffee",
-    role: "Full Stack / Frontend Developer",
+    role: "Full Stack / Frontend Engineer",
     company: "CodeNdCoffee",
     period: "Jan 2024 — Present",
     location: "Remote / Hybrid",

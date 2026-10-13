@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { X, ExternalLink, CheckCircle2 } from 'lucide-react';
 import type { Project } from '../data/portfolioData';
 import { ProjectCardPreview } from './ProjectCardPreview';
@@ -10,11 +11,31 @@ interface Props {
 
 export const ProjectModal: React.FC<Props> = ({ project, onClose }) => {
   const [modalTab, setModalTab] = useState<'screenshot' | 'interactive'>('screenshot');
+
+  // Lock body scroll and listen for Escape key when modal is open
+  useEffect(() => {
+    if (!project) return;
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [project, onClose]);
+
   if (!project) return null;
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-charcoal/60 backdrop-blur-xs animate-in fade-in duration-200"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-charcoal/70 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -207,7 +228,8 @@ export const ProjectModal: React.FC<Props> = ({ project, onClose }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

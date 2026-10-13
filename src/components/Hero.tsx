@@ -220,7 +220,7 @@ export const Hero: React.FC = () => {
               className="space-y-1.5"
             >
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-olive-950 leading-[1.08] font-sans">
-                FRONTEND DEVELOPER
+                FRONTEND ENGINEER
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-olive-600 via-olive-700 to-olive-800">
                   &amp; UI SPECIALIST
@@ -281,7 +281,7 @@ export const Hero: React.FC = () => {
 
               <div>
                 <p className="text-xl sm:text-2xl font-extrabold text-olive-600 font-mono tracking-tight">
-                  <AnimatedCounter value={15} suffix="+" />
+                  <AnimatedCounter value={10} suffix="+" />
                 </p>
                 <p className="text-xs text-olive-700 font-medium mt-1 leading-snug">
                   Shipped Works
