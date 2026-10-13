@@ -189,15 +189,24 @@ export const Contact: React.FC = () => {
                 className="p-3.5 rounded-2xl bg-white border border-sage hover:border-olive shadow-2xs flex items-center justify-between group transition-all"
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-xl bg-olive-light border border-sage flex items-center justify-center text-olive">
-                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.32a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-charcoal">LinkedIn</p>
-                    <p className="text-xs text-muted">Direct Message</p>
-                  </div>
+              
+<div className="w-9 h-9 rounded-xl bg-olive-light border border-sage flex items-center justify-center text-olive">
+  <svg
+    className="w-6 h-6 fill-current"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-label="LinkedIn"
+    role="img"
+  >
+    <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.34 18.34H5.67V9.75h2.67v8.59ZM7 8.58a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1Zm11.34 9.76h-2.67v-4.18c0-1-.02-2.29-1.4-2.29-1.4 0-1.61 1.09-1.61 2.22v4.25H10V9.75h2.56v1.17h.04a2.81 2.81 0 0 1 2.53-1.39c2.7 0 3.21 1.78 3.21 4.1v4.71Z" />
+  </svg>
+</div>
+
+<div>
+  <p className="text-xs font-bold text-charcoal">LinkedIn</p>
+  <p className="text-xs text-muted">Direct Message</p>
+</div>
+
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-muted group-hover:text-olive transition-colors" />
               </a>
@@ -249,9 +258,7 @@ export const Contact: React.FC = () => {
                   <h4 className="text-2xl sm:text-3xl font-extrabold text-charcoal tracking-tight">
                     Sent Successfully!
                   </h4>
-                  <p className="text-xs sm:text-sm text-muted max-w-md mx-auto mt-2 leading-relaxed">
-                    Aapka message Muhammad Faizan ko direct deliver ho gaya hai. Muhammad will review your inquiry and reply to <strong className="text-charcoal font-semibold">{lastSubmittedEmail || 'your email'}</strong> shortly.
-                  </p>
+                  
                 </div>
 
                 {/* Delivery Confirmation Card */}
@@ -266,7 +273,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div className="flex justify-between text-muted">
                     <span>Delivery Status:</span>
-                    <span className="text-emerald-700 font-bold">✓ Confirmed & Delivered</span>
+                    <span className="text-emerald-700 font-bold">Confirmed & Delivered</span>
                   </div>
                 </div>
 
