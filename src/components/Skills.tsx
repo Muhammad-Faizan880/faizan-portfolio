@@ -81,7 +81,7 @@ export const Skills: React.FC = () => {
 
                 {/* Visual active bottom anchor bar */}
                 {isActive && (
-                  <div className="absolute inset-x-0 bottom-0 h-1 bg-olive rounded-b-2xl" />
+                  <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[90%] h-1 bg-olive rounded-full" />
                 )}
 
                 <div className="flex items-center justify-between mb-3">
