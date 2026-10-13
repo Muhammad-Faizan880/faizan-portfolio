@@ -281,6 +281,14 @@ export const Contact: React.FC = () => {
 
                 {/* Delivery Confirmation Card */}
                 <div className="p-4 rounded-2xl bg-offwhite border border-sage text-left text-xs max-w-md mx-auto space-y-2 font-mono">
+                  {lastSubmittedEmail && (
+                    <div className="flex justify-between text-muted">
+                      <span>Sender:</span>
+                      <span className="text-charcoal font-bold truncate max-w-[200px]">
+                        {lastSubmittedEmail}
+                      </span>
+                    </div>
+                  )}
                   <div className="flex justify-between text-muted">
                     <span>Target Recipient:</span>
                     <span className="text-charcoal font-bold">
