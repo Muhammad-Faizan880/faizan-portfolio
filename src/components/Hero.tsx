@@ -9,7 +9,6 @@ import {
   VolumeX,
   Repeat,
 } from "lucide-react";
-import { PERSONAL_INFO } from "../data/portfolioData";
 import { AnimatedCounter } from "./MotionHelper";
 import { TechMarquee } from "./TechMarquee";
 
