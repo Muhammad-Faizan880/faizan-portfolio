@@ -15,6 +15,10 @@ import {
   GithubLogo,
   FigmaLogo,
   RestApiLogo,
+  WebsocketLogo,
+  StripeLogo,
+  JwtLogo,
+  ShieldLockLogo,
 } from './TechLogos';
 
 export interface TechItem {
@@ -28,6 +32,11 @@ const TECH_STACK_ITEMS: TechItem[] = [
   { name: 'Next.js', category: 'Framework', logo: <NextjsLogo className="w-5 h-5 shrink-0" /> },
   { name: 'TypeScript', category: 'Language', logo: <TypescriptLogo className="w-5 h-5 shrink-0 rounded-sm" /> },
   { name: 'Tailwind CSS v4', category: 'Styling', logo: <TailwindLogo className="w-5 h-5 shrink-0" /> },
+  { name: 'JWT Auth', category: 'Security', logo: <JwtLogo className="w-5 h-5 shrink-0" /> },
+  { name: 'Protected Routes', category: 'Navigation', logo: <ShieldLockLogo className="w-5 h-5 shrink-0" /> },
+  { name: 'REST APIs', category: 'Architecture', logo: <RestApiLogo className="w-5 h-5 shrink-0" /> },
+  { name: 'WebSockets', category: 'Real-Time', logo: <WebsocketLogo className="w-5 h-5 shrink-0" /> },
+  { name: 'Stripe', category: 'Payments', logo: <StripeLogo className="w-5 h-5 shrink-0" /> },
   { name: 'JavaScript', category: 'ESNext', logo: <JavascriptLogo className="w-5 h-5 shrink-0 rounded-sm" /> },
   { name: 'Redux Toolkit', category: 'State', logo: <ReduxLogo className="w-5 h-5 shrink-0" /> },
   { name: 'Framer Motion', category: 'Animation', logo: <FramerMotionLogo className="w-5 h-5 shrink-0" /> },
@@ -35,7 +44,6 @@ const TECH_STACK_ITEMS: TechItem[] = [
   { name: 'HTML5', category: 'Markup', logo: <Html5Logo className="w-5 h-5 shrink-0" /> },
   { name: 'CSS3', category: 'Layout & FX', logo: <Css3Logo className="w-5 h-5 shrink-0" /> },
   { name: 'Node.js', category: 'Runtime', logo: <NodejsLogo className="w-5 h-5 shrink-0" /> },
-  { name: 'REST APIs', category: 'Integration', logo: <RestApiLogo className="w-5 h-5 shrink-0" /> },
   { name: 'Git', category: 'VCS', logo: <GitLogo className="w-5 h-5 shrink-0" /> },
   { name: 'GitHub', category: 'Collaboration', logo: <GithubLogo className="w-5 h-5 shrink-0" /> },
   { name: 'Figma', category: 'UI/UX Design', logo: <FigmaLogo className="w-5 h-5 shrink-0" /> },

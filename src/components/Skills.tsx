@@ -5,12 +5,12 @@ import {
   Layers,
   Palette,
   Cpu,
-  CheckCircle2,
-  Terminal,
+  ShieldCheck,
   ArrowRight,
 } from 'lucide-react';
 import { SKILL_CATEGORIES } from '../data/portfolioData';
 import { TiltContainer } from './MotionHelper';
+import { InteractiveAuthSimulator } from './InteractiveAuthSimulator';
 
 export const Skills: React.FC = () => {
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
@@ -25,6 +25,8 @@ export const Skills: React.FC = () => {
         return <Palette className="w-5 h-5 text-olive" />;
       case 'cpu':
         return <Cpu className="w-5 h-5 text-olive" />;
+      case 'shield':
+        return <ShieldCheck className="w-5 h-5 text-olive" />;
       default:
         return <Code2 className="w-5 h-5 text-olive" />;
     }
@@ -185,54 +187,10 @@ export const Skills: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* Right Column: Interactive Code Implementation Preview (5 cols) */}
-          <div className="lg:col-span-5">
-            <TiltContainer maxTilt={8} className="w-full">
-              <div className="bg-white border border-sage rounded-3xl p-6 shadow-md space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-sage">
-                  <div className="flex items-center gap-2">
-                    <Terminal className="w-4 h-4 text-olive" />
-                    <span className="text-xs font-mono font-bold text-charcoal">
-                      ImplementationSpec.ts
-                    </span>
-                  </div>
-                  <span className="text-xs font-mono font-bold text-olive bg-olive-light px-2 py-0.5 rounded">
-                    Strict Quality
-                  </span>
-                </div>
-
-                <div className="p-4 rounded-xl bg-charcoal text-offwhite font-mono text-xs leading-relaxed overflow-x-auto space-y-1.5">
-                  <p className="text-sage/60">// Domain Architecture</p>
-                  <p>
-                    <span className="text-olive">interface</span>{' '}
-                    <span className="text-offwhite font-bold">Standard</span> {'{'}
-                  </p>
-                  <p className="pl-4">
-                    domain: <span className="text-olive">"{activeCategory.category}"</span>,
-                  </p>
-                  <p className="pl-4">
-                    typeSafety: <span className="text-olive font-bold">100</span>,
-                  </p>
-                  <p className="pl-4">
-                    accessibility: <span className="text-olive">"WCAG 2.1 AA"</span>,
-                  </p>
-                  <p className="pl-4">
-                    responsive: <span className="text-olive">"320px - 4K"</span>,
-                  </p>
-                  <p>{'};'}</p>
-                </div>
-
-                <div className="space-y-2 pt-2 text-xs text-muted">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-olive" />
-                    <span>Zero layout shifts on dynamic data hydration</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-olive" />
-                    <span>Memoized callbacks and optimized re-render boundaries</span>
-                  </div>
-                </div>
-              </div>
+          {/* Right Column: Interactive Architecture Lab (5 cols) */}
+          <div className="lg:col-span-5 w-full">
+            <TiltContainer maxTilt={4} className="w-full">
+              <InteractiveAuthSimulator />
             </TiltContainer>
           </div>
         </div>

@@ -44,7 +44,7 @@ export const PERSONAL_INFO = {
   role: "Frontend Engineer",
   experienceYears: 3,
   headline: "Crafting responsive, high-performance web applications with obsessive attention to UI craft.",
-  bio: "Frontend Engineer with 3 years of professional experience specializing in React, Next.js, TypeScript, and modern CSS architecture. I transform complex requirements into fluid, accessible, and resilient digital experiences.",
+  bio: "Frontend Engineer with 3 years of professional experience specializing in React, Next.js, TypeScript, REST APIs, WebSockets, and Stripe payment architectures. I transform complex requirements into fluid, accessible, and resilient digital experiences.",
   location: "Lahore, Pakistan (Available for Global Remote)",
   email: "muhammadfizan713@gmail.com",
   phone: "+92 308 5170759",
@@ -89,14 +89,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     ]
   },
   {
-    category: "APIs & Performance",
-    icon: "cpu",
-    description: "Data orchestration, speed, and engineering standards",
+    category: "Auth, APIs & Security",
+    icon: "shield",
+    description: "JWT authentication, protected route guards, REST APIs, and Stripe",
     skills: [
-      { name: "REST API Integration", level: "Advanced", note: "Axios, React Query, cache management, error boundaries" },
-      { name: "Performance (Core Web Vitals)", level: "Advanced", note: "LCP/FID/CLS optimization, lazy loading, code-splitting" },
-      { name: "Git & Collaborative CI/CD", level: "Advanced", note: "Feature branches, code reviews, semantic versioning" },
-      { name: "Cross-Browser Compatibility", level: "Expert", note: "Safari, Chrome, Firefox, Edge consistency & debugging" }
+      { name: "JWT Auth & Interceptors", level: "Expert", note: "Access & refresh token lifecycles, Axios request/response interceptors, silent token refresh" },
+      { name: "Protected Routes & RBAC", level: "Expert", note: "Declarative route guards (<RequireAuth />), role permissions, session persistence, zero flash" },
+      { name: "REST APIs & WebSockets", level: "Advanced", note: "Axios, React Query / TanStack, bidirectional socket streaming, live telemetry, error handling" },
+      { name: "Stripe & Checkout Systems", level: "Advanced", note: "Stripe Elements, recurring subscription billing, customer portal, webhook payment events" }
     ]
   }
 ];
@@ -107,15 +107,15 @@ export const PROJECTS: Project[] = [
     title: "Betterweb.ai",
     subtitle: "AI Automation & Monetization SaaS Platform",
     category: "Full Stack / SaaS",
-    description: "A production SaaS platform delivering customizable AI automation widgets with subscription monetization and high-conversion client onboarding.",
+    description: "A production SaaS platform delivering customizable AI automation widgets with real-time WebSocket state streaming, Stripe subscription monetization, and high-conversion client onboarding.",
     challenge: "Engineering an intuitive dashboard capable of embedding dynamic AI assistant widgets into third-party sites with sub-second initialization and zero layout shift.",
-    solution: "Architected a lightweight client embed script and built the main web portal using Next.js App Router, Tailwind CSS, and optimized REST APIs with robust error handling.",
+    solution: "Architected a lightweight client embed script and built the main web portal using Next.js App Router, Tailwind CSS, real-time WebSocket channels, and Stripe billing pipelines.",
     metrics: [
-      "Sub-200ms widget initialization time",
-      "Built with Next.js, TypeScript & Tailwind CSS",
+      "Sub-200ms widget initialization time on client websites",
+      "Real-time WebSocket event triggers for instant AI response telemetry",
       "Stripe customer portal & recurring subscription flow"
     ],
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "REST APIs", "Node.js", "Stripe"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "REST APIs", "WebSockets", "Stripe"],
     liveUrl: "https://betterweb.ai",
     githubUrl: "https://github.com/",
     featured: true,
@@ -149,15 +149,15 @@ export const PROJECTS: Project[] = [
     title: "A Retro Tale",
     subtitle: "Luxury Vintage Marketplace & Appraisal Portal",
     category: "E-Commerce / Funnels",
-    description: "A Scandinavian luxury vintage resale platform enabling customers to browse authenticated pre-owned designer pieces and submit items for appraisal.",
+    description: "A Scandinavian luxury vintage resale platform enabling customers to browse authenticated pre-owned designer pieces, complete Stripe checkouts, and submit items for appraisal.",
     challenge: "Handling rich multi-image galleries, facet filtering across dozens of luxury brands, and high-DPI image zooms without degrading mobile responsiveness.",
     solution: "Developed an e-commerce storefront utilizing responsive grid layouts, custom image zoom modals, and synchronized URL query parameters for persistent filtering.",
     metrics: [
+      "Stripe payment gateway integration for secure luxury checkout",
       "Fast client-side facet filtering across 500+ items",
-      "Optimized Core Web Vitals score (LCP < 1.2s)",
       "Redux Toolkit state management with offline cart resilience"
     ],
-    tags: ["React.js", "Redux Toolkit", "Tailwind CSS", "RESTful APIs", "Cloudinary"],
+    tags: ["React.js", "Redux Toolkit", "Tailwind CSS", "REST APIs", "Stripe"],
     liveUrl: "https://aretrotale.com",
     githubUrl: "https://github.com/",
     featured: true,
@@ -199,11 +199,11 @@ export const EXPERIENCES: ExperienceItem[] = [
     description: "Leading frontend engineering initiatives for client and SaaS products, building scalable component design systems and integrating performant backend services.",
     highlights: [
       "Engineered responsive, pixel-perfect user interfaces across multiple web products using React.js, Next.js, TypeScript, and Tailwind CSS.",
-      "Established an internal reusable UI component library, cutting cross-team sprint delivery cycles by 25%.",
-      "Optimized client-side rendering bottlenecks and state architectures with Redux Toolkit and Context API, boosting page load speeds by 35%.",
-      "Collaborated directly with product designers to implement smooth micro-interactions and accessible keyboard flows."
+      "Architected REST APIs and integrated real-time WebSocket communication channels for low-latency live client dashboards.",
+      "Implemented secure Stripe checkout flows, recurring subscription management, and webhook billing listeners.",
+      "Established an internal reusable UI component library, cutting cross-team sprint delivery cycles by 25%."
     ],
-    technologies: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "REST APIs", "Git"]
+    technologies: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "REST APIs", "WebSockets", "Stripe", "Redux Toolkit", "Git"]
   },
   {
     id: "spadasoft",

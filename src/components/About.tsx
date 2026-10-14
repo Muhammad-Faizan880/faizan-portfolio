@@ -43,20 +43,28 @@ export const About: React.FC = () => {
             <p className="max-w-lg text-sm sm:text-base text-muted leading-7">
               I'm a frontend engineer with 3 years of experience turning
               complex ideas into responsive, accessible, and production-ready
-              web experiences.
+              web applications with clean REST APIs, WebSockets, and Stripe.
             </p>
 
             <div className="flex flex-wrap gap-2 mt-5">
-              {["React", "Next.js", "TypeScript", "Tailwind CSS"].map(
-                (skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-sage bg-white px-3 py-1.5 text-xs font-medium text-charcoal"
-                  >
-                    {skill}
-                  </span>
-                ),
-              )}
+              {[
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "JWT Auth",
+                "Protected Routes",
+                "REST APIs",
+                "WebSockets",
+                "Stripe",
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-sage bg-white px-3 py-1.5 text-xs font-medium text-charcoal hover:border-olive hover:text-olive transition-colors"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -241,12 +249,12 @@ export const About: React.FC = () => {
             </div>
 
             <div className="group rounded-2xl border border-sage bg-white p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-olive">
-              <span className="font-mono text-xs text-olive"> Code</span>
+              <span className="font-mono text-xs text-olive"> Architecture</span>
               <h3 className="mt-2 text-lg font-bold text-charcoal">
-                Clean Architecture
+                APIs & Real-Time Flow
               </h3>
               <p className="mt-2 text-sm leading-6 text-muted">
-                Reusable components and maintainable TypeScript.
+                RESTful APIs, WebSockets for live data, and secure Stripe billing.
               </p>
             </div>
 

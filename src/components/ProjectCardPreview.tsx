@@ -48,10 +48,10 @@ export const ProjectCardPreview: React.FC<Props> = ({ projectId }) => {
         <div className="p-2.5 rounded-xl bg-[#e6fbf6] border border-[#2de6c6]/50 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
-            <span className="text-xs font-mono text-[#13211f]">Auto-Sync: &lt;betterweb-agents.js&gt;</span>
+            <span className="text-xs font-mono text-[#13211f]">WebSocket: Live Stream Connected</span>
           </div>
-          <span className="text-xs font-bold px-2 py-0.5 bg-[#0d9488] text-white rounded-md shadow-xs">
-            Protected
+          <span className="text-xs font-bold px-2 py-0.5 bg-[#635BFF] text-white rounded-md shadow-xs">
+            Stripe Active
           </span>
         </div>
       </div>
