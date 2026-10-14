@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import {
   ArrowDown,
   ArrowUpRight,
+  FileDown,
   Play,
   Pause,
   Volume2,
@@ -246,7 +247,7 @@ export const Hero: React.FC = () => {
                 <ArrowUpRight className="w-3.5 h-3.5 text-olive-600 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
 
-         
+             
             </motion.div>
 
             {/* Stats Metrics Counter Grid */}

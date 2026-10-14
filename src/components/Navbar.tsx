@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, FileDown } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Navbar: React.FC = () => {
@@ -99,6 +99,17 @@ export const Navbar: React.FC = () => {
             </div>
 
             <a
+              href="/resume.pdf"
+              download="Muhammad_Faizan_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold bg-white border border-olive-300 text-olive-900 hover:bg-olive-100 hover:border-olive-400 transition-all duration-200 shadow-2xs"
+            >
+              <FileDown className="w-3.5 h-3.5 text-olive-700" />
+              <span>Resume</span>
+            </a>
+
+            <a
               href="#contact"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-olive-600 text-white hover:bg-olive-700 transition-all duration-200 shadow-sm shadow-olive-600/30 hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 border border-olive-500/30"
             >
@@ -149,7 +160,18 @@ export const Navbar: React.FC = () => {
               ))}
             </div>
 
-            <div className="pt-4 border-t border-olive-300 flex flex-col gap-3">
+            <div className="pt-4 border-t border-olive-300 flex flex-col gap-2.5">
+              <a
+                href="/resume.pdf"
+                download="Muhammad_Faizan_Resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full py-2.5 rounded-xl text-center text-xs font-bold bg-white text-olive-950 border border-olive-300 shadow-2xs flex items-center justify-center gap-2 hover:bg-olive-100 transition-colors"
+              >
+                <FileDown className="w-3.5 h-3.5 text-olive-700" />
+                <span>Download Resume (PDF)</span>
+              </a>
+
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}

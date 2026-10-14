@@ -47,9 +47,10 @@ export const PERSONAL_INFO = {
   bio: "Frontend Engineer with 3 years of professional experience specializing in React, Next.js, TypeScript, REST APIs, WebSockets, and Stripe payment architectures. I transform complex requirements into fluid, accessible, and resilient digital experiences.",
   location: "Lahore, Pakistan (Available for Global Remote)",
   email: "muhammadfizan713@gmail.com",
-  phone: "+92 308 5170759",
-  linkedin: "https://www.linkedin.com/in/muhammad-faizan-797599243/",
+  phone: "+92 308 5170759",/*  */
+  linkedin: "https://www.linkedin.com/in/muhammad-fizan-797599243",
   github: "https://github.com/",
+  resumeUrl: "/Fizan_Frontend_3Years.pdf",
   availability: "Available for Full-time Roles & High-Impact Contracts",
   timezoneNotice: "Flexible overlap with US (EST/PST), UK (GMT), and European (CET) working hours."
 };

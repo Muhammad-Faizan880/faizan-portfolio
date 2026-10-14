@@ -113,7 +113,7 @@ export const Projects: React.FC = () => {
           </div>
 
           {/* Slider Controls & Counter */}
-          <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0">
+          <div className="flex items-center justify-end  gap-3 shrink-0">
            
 
             {/* Arrows */}
