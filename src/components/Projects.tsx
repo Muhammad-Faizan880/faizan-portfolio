@@ -8,8 +8,6 @@ import {
   ArrowUpRight,
   CheckCircle2,
   Eye,
-  Monitor,
-  Smartphone,
   Image as ImageIcon,
   Code2,
   Lock,
@@ -23,7 +21,6 @@ export const Projects: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
-  const [previewMode, setPreviewMode] = useState<'desktop' | 'mobile'>('desktop');
   const [viewType, setViewType] = useState<'screenshot' | 'interactive'>('screenshot');
   const [isAutoplay, setIsAutoplay] = useState(false);
 
@@ -236,118 +233,70 @@ export const Projects: React.FC = () => {
                 {/* The Visual Preview Canvas */}
                 <div className="my-auto py-2 flex items-center justify-center min-h-[380px]">
                   {viewType === 'screenshot' ? (
-                    previewMode === 'desktop' ? (
-                      /* Desktop Browser Mockup Frame */
-                      <div className="w-full rounded-2xl border border-sage bg-white shadow-md overflow-hidden flex flex-col group/browser transition-all duration-300">
-                        {/* Browser Chrome Address Bar */}
-                        <div className="bg-offwhite border-b border-sage px-3.5 py-2.5 flex items-center justify-between gap-3">
-                          <div className="flex items-center gap-1.5 shrink-0">
-                            <span className="w-2.5 h-2.5 rounded-full bg-rose-400 inline-block" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block" />
-                          </div>
+                    /* Desktop Browser Mockup Frame */
+                    <div className="w-full rounded-2xl border border-sage bg-white shadow-md overflow-hidden flex flex-col group/browser transition-all duration-300">
+                      {/* Browser Chrome Address Bar */}
+                      <div className="bg-offwhite border-b border-sage px-3.5 py-2.5 flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-1.5 shrink-0">
+                          <span className="w-2.5 h-2.5 rounded-full bg-rose-400 inline-block" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block" />
+                        </div>
 
-                          <div className="flex-1 max-w-sm mx-auto px-3 py-1 rounded-lg bg-white border border-sage/60 flex items-center justify-center gap-1.5 text-xs text-muted font-mono truncate">
-                            <Lock className="w-3 h-3 text-olive shrink-0" />
-                            <span className="truncate">
-                              {currentProject.liveUrl
-                                ? currentProject.liveUrl.replace('https://', '')
-                                : `${currentProject.id}.com`}
-                            </span>
-                          </div>
-
-                          <span className="text-xs font-mono uppercase tracking-wider text-muted hidden sm:inline-block">
-                            Live UI
+                        <div className="flex-1 max-w-sm mx-auto px-3 py-1 rounded-lg bg-white border border-sage/60 flex items-center justify-center gap-1.5 text-xs text-muted font-mono truncate">
+                          <Lock className="w-3 h-3 text-olive shrink-0" />
+                          <span className="truncate">
+                            {currentProject.liveUrl
+                              ? currentProject.liveUrl.replace('https://', '')
+                              : `${currentProject.id}.com`}
                           </span>
                         </div>
 
-                        {/* Screenshot Thumbnail */}
-                        <div className="relative aspect-[16/10] sm:h-[350px] w-full overflow-hidden bg-offwhite flex items-center justify-center">
-                          {currentProject.imageUrl ? (
-                            <img
-                              src={currentProject.imageUrl}
-                              alt={currentProject.imageAlt || currentProject.title}
-                              loading="lazy"
-                              className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/browser:scale-105"
-                            />
-                          ) : (
-                            <ProjectCardPreview projectId={currentProject.id} />
-                          )}
+                        <span className="text-xs font-mono uppercase tracking-wider text-muted hidden sm:inline-block">
+                          Live UI
+                        </span>
+                      </div>
 
-                          {/* Hover Action Overlay */}
-                          <div className="absolute inset-0 bg-charcoal/40 backdrop-blur-[2px] opacity-0 group-hover/browser:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 p-4">
-                            <button
-                              type="button"
-                              onClick={() => setActiveModalProject(currentProject)}
-                              className="px-4 py-2 rounded-xl bg-white text-charcoal text-xs font-bold shadow-lg hover:bg-olive hover:text-white transition-all transform translate-y-2 group-hover/browser:translate-y-0 duration-300 flex items-center gap-1.5 cursor-pointer"
+                      {/* Screenshot Thumbnail */}
+                      <div className="relative aspect-[16/10] sm:h-[350px] w-full overflow-hidden bg-offwhite flex items-center justify-center">
+                        {currentProject.imageUrl ? (
+                          <img
+                            src={currentProject.imageUrl}
+                            alt={currentProject.imageAlt || currentProject.title}
+                            loading="lazy"
+                            className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/browser:scale-105"
+                          />
+                        ) : (
+                          <ProjectCardPreview projectId={currentProject.id} />
+                        )}
+
+                        {/* Hover Action Overlay */}
+                        <div className="absolute inset-0 bg-charcoal/40 backdrop-blur-[2px] opacity-0 group-hover/browser:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 p-4">
+                          <button
+                            type="button"
+                            onClick={() => setActiveModalProject(currentProject)}
+                            className="px-4 py-2 rounded-xl bg-white text-charcoal text-xs font-bold shadow-lg hover:bg-olive hover:text-white transition-all transform translate-y-2 group-hover/browser:translate-y-0 duration-300 flex items-center gap-1.5 cursor-pointer"
+                          >
+                            <Eye className="w-3.5 h-3.5" />
+                            <span>Inspect Specs</span>
+                          </button>
+                          {currentProject.liveUrl && (
+                            <a
+                              href={currentProject.liveUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="px-4 py-2 rounded-xl bg-olive text-offwhite text-xs font-bold shadow-lg hover:bg-olive-dark transition-all transform translate-y-2 group-hover/browser:translate-y-0 duration-300 flex items-center gap-1.5"
                             >
-                              <Eye className="w-3.5 h-3.5" />
-                              <span>Inspect Specs</span>
-                            </button>
-                            {currentProject.liveUrl && (
-                              <a
-                                href={currentProject.liveUrl}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="px-4 py-2 rounded-xl bg-olive text-offwhite text-xs font-bold shadow-lg hover:bg-olive-dark transition-all transform translate-y-2 group-hover/browser:translate-y-0 duration-300 flex items-center gap-1.5"
-                              >
-                                <span>Live Demo</span>
-                                <ExternalLink className="w-3.5 h-3.5" />
-                              </a>
-                            )}
-                          </div>
+                              <span>Live Demo</span>
+                              <ExternalLink className="w-3.5 h-3.5" />
+                            </a>
+                          )}
                         </div>
                       </div>
-                    ) : (
-                      /* Mobile Phone Mockup Frame */
-                      <div className="relative mx-auto w-[240px] sm:w-[270px] h-[360px] sm:h-[380px] rounded-[36px] p-2.5 bg-charcoal shadow-2xl border-4 border-charcoal/90 flex flex-col group/phone transition-all duration-300">
-                        {/* Notch / Speaker */}
-                        <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-4 bg-charcoal rounded-full z-20 flex items-center justify-center">
-                          <div className="w-2 h-2 rounded-full bg-charcoal/80 border border-white/20 mr-1.5" />
-                          <div className="w-6 h-1 bg-white/20 rounded-full" />
-                        </div>
-
-                        {/* Phone Screen */}
-                        <div className="w-full h-full rounded-[28px] overflow-hidden bg-white relative flex flex-col justify-center items-center">
-                          {currentProject.imageUrl ? (
-                            <div className="w-full h-full flex items-center justify-center p-3 bg-[#f7f9f7]">
-                              <img
-                                src={currentProject.imageUrl}
-                                alt={currentProject.imageAlt || currentProject.title}
-                                loading="lazy"
-                                className="w-full h-auto max-h-full object-contain rounded-lg shadow-xs transition-transform duration-700 ease-out group-hover/phone:scale-105"
-                              />
-                            </div>
-                          ) : (
-                            <ProjectCardPreview projectId={currentProject.id} />
-                          )}
-
-                          {/* Hover Overlay */}
-                          <div className="absolute inset-0 bg-charcoal/50 backdrop-blur-[2px] opacity-0 group-hover/phone:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
-                            <button
-                              type="button"
-                              onClick={() => setActiveModalProject(currentProject)}
-                              className="px-3.5 py-1.5 rounded-xl bg-white text-charcoal text-xs font-bold shadow-lg hover:bg-olive hover:text-white transition-all flex items-center gap-1.5 cursor-pointer"
-                            >
-                              <Eye className="w-3.5 h-3.5" />
-                              <span>View Specs</span>
-                            </button>
-                          </div>
-                        </div>
-
-                        {/* Home indicator bar */}
-                        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-16 h-1 bg-white/40 rounded-full z-20" />
-                      </div>
-                    )
+                    </div>
                   ) : (
                     /* Interactive UI Mockup Canvas */
-                    <div
-                      className={`transition-all duration-300 rounded-2xl border border-sage bg-white shadow-sm overflow-hidden w-full ${
-                        previewMode === 'mobile'
-                          ? 'max-w-[340px] h-[360px]'
-                          : 'max-w-full h-[320px] sm:h-[360px]'
-                      }`}
-                    >
+                    <div className="transition-all duration-300 rounded-2xl border border-sage bg-white shadow-sm overflow-hidden w-full max-w-full h-[320px] sm:h-[360px]">
                       <ProjectCardPreview projectId={currentProject.id} />
                     </div>
                   )}

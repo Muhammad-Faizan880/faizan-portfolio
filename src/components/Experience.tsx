@@ -4,7 +4,6 @@ import {
   MapPin,
   CheckCircle2,
   GraduationCap,
-  Sparkles,
   Clock,
   Columns2,
   SlidersHorizontal,
@@ -274,7 +273,6 @@ export const Experience: React.FC = () => {
                     {/* Deliverables Grid */}
                     <div className="mt-5 pt-4 border-t border-sage">
                       <div className="flex items-center gap-2 mb-3">
-                        <Sparkles className="w-3.5 h-3.5 text-olive" />
                         <h4 className="text-xs font-bold uppercase tracking-wider text-charcoal">
                           Verified Engineering Deliverables:
                         </h4>
