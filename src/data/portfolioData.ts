@@ -115,13 +115,32 @@ export const PROJECTS: Project[] = [
       "Real-time WebSocket event triggers for instant AI response telemetry",
       "Stripe customer portal & recurring subscription flow"
     ],
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "REST APIs", "WebSockets", "Stripe"],
+    tags: ["Vue.js", "TypeScript", "Tailwind CSS", "REST APIs", "WebSockets", "Stripe"],
     liveUrl: "https://betterweb.ai",
-    githubUrl: "https://github.com/",
     featured: true,
     imageAlt: "Betterweb.ai - The AI team that does the work. Platform Showcase",
     accentColor: "#0d9488",
-    imageUrl: "/projects/betterweb-ai.jpg"
+    imageUrl: "/projects/betterweb.png"
+  },
+  {
+    id: "rankology",
+    title: "Rankology",
+    subtitle: "SEO Intelligence & Search Analytics Platform",
+    category: "Full Stack / SaaS",
+    description: "An enterprise SEO intelligence and keyword analytics platform turning search data into actionable growth strategies, featuring Google Analytics & Search Console sync and automated technical audits.",
+    challenge: "Synthesizing high-volume keyword datasets, SERP ranking telemetry, and multi-channel audit reports into an intuitive, responsive, and sub-second dashboard workspace.",
+    solution: "Engineered high-performance data visualization dashboards using Next.js App Router, TypeScript, Tailwind CSS, and REST API pipelines with optimized caching and state virtualization.",
+    metrics: [
+      "Interactive Keyword Analyzer with real-time volume & CPC telemetry",
+      "Integrated Google Analytics & Search Console data sync pipelines",
+      "Sub-second dashboard loading with zero layout shift (CLS < 0.05)"
+    ],
+    tags: ["Vue.js", "TypeScript", "Tailwind CSS", "REST APIs", "Data Visualization", "SEO Tech"],
+    liveUrl: "https://app.rankology.io/",
+    featured: true,
+    imageAlt: "Rankology - SEO Intelligence Platform Showcase",
+    accentColor: "#4F46E5",
+    imageUrl: "/projects/rankology.png"
   },
   {
     id: "ease-md",
@@ -136,13 +155,12 @@ export const PROJECTS: Project[] = [
       "100% accessible keyboard navigation across all quiz inputs",
       "Zero bundle bloat using modular UI components"
     ],
-    tags: ["React.js", "Next.js", "Tailwind CSS", "Component Architecture", "REST APIs"],
-    liveUrl: "https://easemd.com",
-    githubUrl: "https://github.com/",
+    tags: ["React.js", "Tailwind CSS", "Component Architecture", "REST APIs"],
+    liveUrl: "https://ease-md.vercel.app/?step=1",
     featured: true,
     imageAlt: "Ease MD Telehealth Interface Preview",
     accentColor: "#525E37",
-    imageUrl: "/projects/ease-md.jpg"
+    imageUrl: "/projects/ease.png"
   },
   {
     id: "a-retro-tale",
@@ -157,34 +175,52 @@ export const PROJECTS: Project[] = [
       "Fast client-side facet filtering across 500+ items",
       "Redux Toolkit state management with offline cart resilience"
     ],
-    tags: ["React.js", "Redux Toolkit", "Tailwind CSS", "REST APIs", "Stripe"],
+    tags: ["Next.js", "Redux Toolkit", "Tailwind CSS", "REST APIs", "Stripe"],
     liveUrl: "https://aretrotale.com",
-    githubUrl: "https://github.com/",
     featured: true,
     imageAlt: "A Retro Tale Luxury Vintage Interface Preview",
     accentColor: "#687548",
-    imageUrl: "/projects/a-retro-tale.jpg"
+    imageUrl: "/projects/a-retro-tale.png"
+  },
+  {
+    id: "codendcoffee",
+    title: "CodeNdCoffee",
+    subtitle: "Custom WordPress Theme & Digital Agency Platform",
+    category: "Frontend & UI",
+    description: "Official digital agency platform built with semantic HTML5 and Tailwind CSS, fully integrated into a custom, high-speed WordPress theme engine with flexible dynamic blocks.",
+    challenge: "Translating custom Figma designs into an ultra-fast, responsive web interface while enabling seamless content management without plugin bloat or page-builder overhead.",
+    solution: "Developed modular component markup using HTML5 and Tailwind CSS utility classes, then engineered a bespoke lightweight WordPress theme with custom templates, optimized asset loading, and dynamic content queries.",
+    metrics: [
+      "Custom WordPress theme architecture engineered with zero heavy builder bloat",
+      "Pixel-perfect responsive design crafted with HTML5 and modern Tailwind CSS",
+      "95+ Google PageSpeed score with sub-second First Contentful Paint"
+    ],
+    tags: ["HTML5", "Tailwind CSS", "WordPress", "PHP", "Responsive Design", "UI/UX"],
+    liveUrl: "https://codendcoffee.com/",
+    featured: true,
+    imageAlt: "CodeNdCoffee - Digital Agency & Software Engineering Platform Showcase",
+    accentColor: "#D97706",
+    imageUrl: "/projects/codendcoffee.png"
   },
   {
     id: "darvesta",
     title: "Darvesta",
-    subtitle: "Real Estate Discovery & Property Portal",
+    subtitle: "Cross-Platform Real Estate Mobile App",
     category: "Mobile & Web",
-    description: "Interactive real estate portal featuring geospatial property discovery, bookmarking, and responsive mortgage calculators.",
-    challenge: "Synchronizing dynamic map viewport coordinates with property listing cards while keeping mobile touch interactions buttery smooth.",
-    solution: "Designed a twin-view layout (interactive map + card feed) with debounced viewport bounds queries and responsive bottom-sheet filter controls.",
+    description: "A cross-platform real estate discovery mobile application engineered with React Native CLI, featuring geospatial property search, interactive maps, bookmarking, and mortgage calculators for iOS and Android.",
+    challenge: "Achieving native 60 FPS gesture fluidly on both iOS and Android while synchronizing live Mapbox camera viewports with debounced property feed queries.",
+    solution: "Built using React Native CLI with TypeScript and Redux Toolkit, integrating react-native-reanimated for buttery smooth bottom-sheets and native map bridge modules.",
     metrics: [
-      "Smooth 60 FPS mobile gesture handling and bottom-sheet drawers",
-      "Full responsive breakpoint support from 320px to wide desktop",
-      "Clean TypeScript interfaces across all property entities"
+      "Built with React Native CLI for native iOS & Android performance",
+      "Buttery 60 FPS gesture handling with react-native-reanimated",
+      "Offline property caching & persistent Redux Toolkit state"
     ],
-    tags: ["React.js", "TypeScript", "Tailwind CSS", "REST APIs", "Mapbox GL"],
-    liveUrl: "https://darvesta.com",
-    githubUrl: "https://github.com/",
+    tags: ["React Native CLI", "TypeScript", "Redux Toolkit", "Mapbox", "REST APIs", "iOS & Android"],
+    liveUrl: "https://darvesta.com/",
     featured: false,
-    imageAlt: "Darvesta Property Portal Preview",
+    imageAlt: "Darvesta React Native Mobile App Preview",
     accentColor: "#525E37",
-    imageUrl: "/projects/darvesta.jpg"
+    imageUrl: "/projects/darvesta.png"
   }
 ];
 

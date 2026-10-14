@@ -15,20 +15,21 @@ import { InteractiveAuthSimulator } from './InteractiveAuthSimulator';
 export const Skills: React.FC = () => {
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
 
-  const getCategoryIcon = (iconName: string) => {
+  const getCategoryIcon = (iconName: string, isWhite = false) => {
+    const cls = `w-5 h-5 ${isWhite ? 'text-white' : 'text-olive'}`;
     switch (iconName) {
       case 'code':
-        return <Code2 className="w-5 h-5 text-olive" />;
+        return <Code2 className={cls} />;
       case 'layers':
-        return <Layers className="w-5 h-5 text-olive" />;
+        return <Layers className={cls} />;
       case 'palette':
-        return <Palette className="w-5 h-5 text-olive" />;
+        return <Palette className={cls} />;
       case 'cpu':
-        return <Cpu className="w-5 h-5 text-olive" />;
+        return <Cpu className={cls} />;
       case 'shield':
-        return <ShieldCheck className="w-5 h-5 text-olive" />;
+        return <ShieldCheck className={cls} />;
       default:
-        return <Code2 className="w-5 h-5 text-olive" />;
+        return <Code2 className={cls} />;
     }
   };
 
@@ -39,89 +40,90 @@ export const Skills: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-10 sm:mb-12">
-         
-          <h2 className="max-w-3xl text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-charcoal leading-[1.12]">
-            Battle-tested technical stack &amp; <span className="text-olive">engineering standards.</span>
-          </h2>
-         
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-10 gap-4">
+          <div className="max-w-2xl">
+            <h2 className="max-w-3xl text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-charcoal leading-[1.12]">
+              Battle-tested technical stack &amp; <span className="text-olive">engineering standards.</span>
+            </h2>
+          </div>
+
+          {/* Interactive Click Hint Pill */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-olive-light border border-olive/30 text-xs font-mono font-semibold text-olive-dark shadow-2xs self-start sm:self-auto">
+            <span className="w-2 h-2 rounded-full bg-olive animate-pulse" />
+            <span>Click any category to view details</span>
+          </div>
         </div>
 
-     
-
         {/* Interactive Domain Navigator (Affordance-driven selector) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-10" role="tablist" aria-label="Technical skill domains">
           {SKILL_CATEGORIES.map((cat, idx) => {
             const isActive = idx === activeCategoryIndex;
             return (
               <button
                 key={cat.category}
                 type="button"
+                role="tab"
+                aria-selected={isActive}
                 onClick={() => setActiveCategoryIndex(idx)}
-                className={`relative p-4 sm:p-5 rounded-2xl text-left transition-all border flex flex-col justify-between cursor-pointer group ${
+                className={`relative p-4 sm:p-5 rounded-2xl text-left transition-all border flex flex-col justify-between cursor-pointer group active:scale-[0.98] select-none ${
                   isActive
-                    ? 'bg-white border-olive shadow-md ring-2 ring-olive/20 -translate-y-0.5'
-                    : 'bg-white/70 border-sage hover:bg-white hover:border-olive/50 hover:-translate-y-0.5 hover:shadow-xs'
+                    ? 'bg-olive-50/70 border-olive shadow-md ring-2 ring-olive/25 -translate-y-1'
+                    : 'bg-white border-sage hover:bg-olive-light/30 hover:border-olive/60 hover:-translate-y-1 hover:shadow-xs'
                 }`}
               >
-                {/* Floating Hover Tooltip */}
-                <div className="absolute -top-11 left-1/2 -translate-x-1/2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 pointer-events-none z-30 whitespace-nowrap">
-                  <div className="bg-charcoal text-offwhite text-xs font-mono px-3 py-1.5 rounded-xl shadow-xl border border-sage/20 flex items-center gap-1.5">
-                    {isActive ? (
-                      <>
-                        <span>Currently viewing this domain</span>
-                      </>
-                    ) : (
-                      <>
-                        <span>Click to view {cat.category}</span>
-                      </>
-                    )}
-                  </div>
-                  {/* Tooltip Caret */}
-                  <div className="w-2 h-2 bg-charcoal rotate-45 mx-auto -mt-1 border-r border-b border-sage/20" />
-                </div>
-
                 {/* Visual active bottom anchor bar */}
                 {isActive && (
-                  <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[90%] h-1 bg-olive rounded-full" />
+                  <div className="absolute left-0 right-0 bottom-0 h-1.5 bg-olive rounded-b-2xl" />
                 )}
 
-                <div className="flex items-center justify-between mb-3">
-                  <div className={`p-2 rounded-xl transition-colors ${isActive ? 'bg-olive-light' : 'bg-offwhite group-hover:bg-olive-light/60'}`}>
-                    {getCategoryIcon(cat.icon)}
+                <div className="flex items-center justify-between mb-3.5">
+                  <div
+                    className={`p-2.5 rounded-xl transition-colors ${
+                      isActive
+                        ? 'bg-olive text-white shadow-xs'
+                        : 'bg-offwhite text-olive border border-sage/60 group-hover:bg-olive-light group-hover:border-olive/40'
+                    }`}
+                  >
+                    {getCategoryIcon(cat.icon, isActive)}
                   </div>
+
                   {isActive ? (
-                    <span className="px-2 py-0.5 rounded-full text-xs font-mono font-bold bg-olive text-white flex items-center gap-1 shadow-2xs">
-                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                      Active
+                    <span className="px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-olive text-offwhite flex items-center gap-1.5 shadow-2xs">
+                      <span className="w-1.5 h-1.5 rounded-full bg-offwhite animate-pulse" />
+                      Active Tab
                     </span>
                   ) : (
-                    <span className="text-xs font-mono font-bold text-muted group-hover:text-olive transition-colors">
-                      
+                    <span className="px-2.5 py-1 rounded-full text-[11px] font-mono font-semibold text-charcoal bg-offwhite border border-sage group-hover:bg-olive group-hover:text-offwhite group-hover:border-olive transition-all flex items-center gap-1">
+                      <span>Select</span>
+                      <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
                     </span>
                   )}  
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-bold text-charcoal group-hover:text-olive transition-colors">
-                    {cat.category}
-                  </h3>
-                  <p className="text-xs text-muted mt-0.5 line-clamp-1">
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className="text-[10px] font-mono font-bold text-olive/80">0{idx + 1} //</span>
+                    <h3 className={`text-sm font-bold transition-colors ${isActive ? 'text-charcoal' : 'text-charcoal group-hover:text-olive'}`}>
+                      {cat.category}
+                    </h3>
+                  </div>
+                  <p className="text-xs text-muted leading-relaxed line-clamp-2 min-h-[32px]">
                     {cat.description}
                   </p>
 
                   {/* Clear affordance indicator */}
-                  <div className="pt-2.5 mt-2 border-t border-sage/60 flex items-center justify-between text-xs font-mono">
+                  <div className="pt-3 mt-3 border-t border-sage/60 flex items-center justify-between text-xs font-mono">
                     <span className={isActive ? 'font-bold text-olive' : 'text-muted'}>
                       {cat.skills.length} skills
                     </span>
+
                     {isActive ? (
-                      <span className="font-semibold text-olive flex items-center gap-1">
+                      <span className="px-2 py-0.5 rounded-md bg-olive/15 text-olive-dark font-bold text-[11px] flex items-center gap-1">
                         Viewing below ↓
                       </span>
                     ) : (
-                      <span className="text-muted group-hover:text-olive flex items-center gap-1 transition-colors">
-                        Click to inspect <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
+                      <span className="px-2 py-0.5 rounded-md bg-offwhite border border-sage text-muted group-hover:text-olive group-hover:border-olive/40 transition-colors text-[11px] flex items-center gap-1">
+                        Click to view
                       </span>
                     )}
                   </div>

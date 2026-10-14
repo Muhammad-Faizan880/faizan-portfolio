@@ -108,7 +108,7 @@ export const Projects: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with Navigation Controls */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-5 sm:gap-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 sm:mb-8 gap-4 sm:gap-6">
           <div className="max-w-2xl">
             <h2 className="max-w-3xl text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-charcoal leading-[1.15] sm:leading-[1.12]">
               Selected works engineered for <span className="text-olive">performance.</span>
@@ -116,15 +116,15 @@ export const Projects: React.FC = () => {
           </div>
 
           {/* Slider Controls & Counter */}
-   
-          
+          <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0">
+           
 
             {/* Arrows */}
-            <div className="flex items-center justify-end gap-2">
+            <div className="flex items-center gap-2">
               <button
                 type="button"
                 onClick={handlePrev}
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white border border-sage text-charcoal hover:bg-olive hover:text-offwhite hover:border-olive transition-all duration-200 flex items-center justify-center shadow-xs active:scale-95 cursor-pointer"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-white border border-sage text-charcoal hover:bg-olive hover:text-offwhite hover:border-olive transition-all duration-200 flex items-center justify-center shadow-xs active:scale-95 cursor-pointer"
                 aria-label="Previous project slide"
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -133,13 +133,39 @@ export const Projects: React.FC = () => {
               <button
                 type="button"
                 onClick={handleNext}
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white border border-sage text-charcoal hover:bg-olive hover:text-offwhite hover:border-olive transition-all duration-200 flex items-center justify-center shadow-xs active:scale-95 cursor-pointer"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-white border border-sage text-charcoal hover:bg-olive hover:text-offwhite hover:border-olive transition-all duration-200 flex items-center justify-center shadow-xs active:scale-95 cursor-pointer"
                 aria-label="Next project slide"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
             </div>
-         
+          </div>
+        </div>
+
+        {/* Project Selector Tab Pills - Shows all projects directly */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none">
+          {PROJECTS.map((project, idx) => {
+            const isActive = currentIndex === idx;
+            return (
+              <button
+                key={project.id}
+                type="button"
+                onClick={() => {
+                  setDirection(idx > currentIndex ? 1 : -1);
+                  setCurrentIndex(idx);
+                }}
+                className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all whitespace-nowrap cursor-pointer flex items-center gap-2 shrink-0 ${
+                  isActive
+                    ? 'bg-olive text-offwhite shadow-xs border border-olive'
+                    : 'bg-white border border-sage text-charcoal hover:border-olive hover:text-olive'
+                }`}
+              >
+                
+                <span>{project.title}</span>
+                
+              </button>
+            );
+          })}
         </div>
 
         {/* Dynamic Project Stage (Interactive Carousel Container) */}
@@ -203,33 +229,7 @@ export const Projects: React.FC = () => {
                       </button>
                     </div>
 
-                    {/* Responsive Viewport Toggle (Desktop vs Mobile Preview - sm screens and above) */}
-                    <div className="hidden sm:flex items-center gap-1 p-1 bg-white border border-sage rounded-xl text-xs">
-                      <button
-                        type="button"
-                        onClick={() => setPreviewMode('desktop')}
-                        className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
-                          previewMode === 'desktop'
-                            ? 'bg-olive text-offwhite'
-                            : 'text-muted hover:text-charcoal'
-                        }`}
-                        title="Desktop Preview"
-                      >
-                        <Monitor className="w-4 h-4" />
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setPreviewMode('mobile')}
-                        className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
-                          previewMode === 'mobile'
-                            ? 'bg-olive text-offwhite'
-                            : 'text-muted hover:text-charcoal'
-                        }`}
-                        title="Mobile Viewport"
-                      >
-                        <Smartphone className="w-4 h-4" />
-                      </button>
-                    </div>
+                 
                   </div>
                 </div>
 
