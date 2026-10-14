@@ -21,9 +21,8 @@ export const Hero: React.FC = () => {
   const [isMuted, setIsMuted] = useState<boolean>(true);
   const [isVideoLoaded, setIsVideoLoaded] = useState<boolean>(false);
 
-  // Mouse spotlight coords
-  const [mousePos, setMousePos] = useState<{ x: number; y: number }>({ x: 600, y: 300 });
-  const [isHovered, setIsHovered] = useState<boolean>(false);
+  // Spotlight ref for zero-rerender GPU-friendly cursor glow
+  const spotlightRef = useRef<HTMLDivElement>(null);
 
   // Normalized motion values (-1 to 1) for 3D tilt
   const normX = useMotionValue(0);
@@ -37,15 +36,17 @@ export const Hero: React.FC = () => {
   const rotateY = useTransform(smoothX, [-1, 1], [-10, 10]);
   const rotateX = useTransform(smoothY, [-1, 1], [8, -8]);
 
-  // Handle Mouse movement for gradient glow and 3D card tilt
+  // Handle Mouse movement with zero React re-renders for buttery 60fps performance
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (!heroRef.current) return;
     const rect = heroRef.current.getBoundingClientRect();
     const pixelX = e.clientX - rect.left;
     const pixelY = e.clientY - rect.top;
 
-    setMousePos({ x: pixelX, y: pixelY });
-    setIsHovered(true);
+    if (spotlightRef.current) {
+      spotlightRef.current.style.background = `radial-gradient(600px circle at ${pixelX}px ${pixelY}px, rgba(175, 219, 98, 0.22), rgba(142, 168, 88, 0.08) 45%, transparent 75%)`;
+      spotlightRef.current.style.opacity = '1';
+    }
 
     const normalizedX = ((pixelX / rect.width) - 0.5) * 2;
     const normalizedY = ((pixelY / rect.height) - 0.5) * 2;
@@ -55,7 +56,9 @@ export const Hero: React.FC = () => {
   }, [normX, normY]);
 
   const handleMouseLeave = useCallback(() => {
-    setIsHovered(false);
+    if (spotlightRef.current) {
+      spotlightRef.current.style.opacity = '0.4';
+    }
     normX.set(0);
     normY.set(0);
   }, [normX, normY]);
@@ -139,13 +142,10 @@ export const Hero: React.FC = () => {
 />
 
 
-      {/* 2. Interactive Soft Cursor Spotlight Glow */}
+      {/* 2. Interactive Soft Cursor Spotlight Glow (DOM-driven, zero React re-renders) */}
       <div
-        className="pointer-events-none absolute inset-0 transition-opacity duration-500 z-1"
-        style={{
-          background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(175, 219, 98, 0.22), rgba(142, 168, 88, 0.08) 45%, transparent 75%)`,
-          opacity: isHovered ? 1 : 0.5,
-        }}
+        ref={spotlightRef}
+        className="pointer-events-none absolute inset-0 transition-opacity duration-300 z-1 opacity-40"
       />
 
       {/* 3. Smooth Living Organic Aurora Mesh System (Zero Banding, No Dots) */}
