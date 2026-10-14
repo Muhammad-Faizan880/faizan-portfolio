@@ -3,7 +3,6 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import {
   ArrowDown,
   ArrowUpRight,
-  FileDown,
   Play,
   Pause,
   Volume2,
