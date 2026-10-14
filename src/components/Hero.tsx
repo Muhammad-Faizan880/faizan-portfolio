@@ -151,35 +151,18 @@ export const Hero: React.FC = () => {
       {/* 3. Smooth Living Organic Aurora Mesh System (Zero Banding, No Dots) */}
       <div className="absolute inset-0 pointer-events-none select-none z-1 overflow-hidden">
         {/* Aurora Layer A: Left Floating Soft Aura */}
-        <motion.div
-          animate={{
-            x: [-25, 20, -25],
-            y: [-15, 20, -15],
-            scale: [1, 1.08, 1],
-          }}
-          transition={{ repeat: Infinity, duration: 16, ease: "easeInOut" }}
-          className="absolute -top-[10%] -left-[5%] w-[600px] sm:w-[800px] lg:w-[950px] h-[600px] sm:h-[800px] lg:h-[950px] rounded-full bg-gradient-to-br from-olive-lime/30 via-olive-400/20 to-transparent blur-[120px] lg:blur-[160px]"
+        <div
+          className="absolute -top-[10%] -left-[5%] w-[600px] sm:w-[800px] lg:w-[950px] h-[600px] sm:h-[800px] lg:h-[950px] rounded-full [background:radial-gradient(circle,rgba(192,230,117,0.24)_0%,rgba(163,198,99,0.12)_45%,transparent_70%)] blur-2xl lg:blur-3xl"
         />
 
         {/* Aurora Layer B: Right Video Ambient Halo */}
-        <motion.div
-          animate={{
-            x: [20, -25, 20],
-            y: [15, -20, 15],
-            scale: [1.06, 0.96, 1.06],
-          }}
-          transition={{ repeat: Infinity, duration: 20, ease: "easeInOut" }}
-          className="absolute top-[5%] -right-[8%] w-[650px] sm:w-[850px] lg:w-[1050px] h-[650px] sm:h-[850px] lg:h-[1050px] rounded-full bg-gradient-to-bl from-olive-glow/35 via-olive-500/20 to-transparent blur-[130px] lg:blur-[170px]"
+        <div
+          className="absolute top-[5%] -right-[8%] w-[650px] sm:w-[850px] lg:w-[1050px] h-[650px] sm:h-[850px] lg:h-[1050px] rounded-full [background:radial-gradient(circle,rgba(151,184,99,0.28)_0%,rgba(142,168,88,0.14)_45%,transparent_70%)] blur-2xl lg:blur-3xl"
         />
 
         {/* Aurora Layer C: Center Connecting Horizon Wave */}
-        <motion.div
-          animate={{
-            opacity: [0.35, 0.55, 0.35],
-            scaleX: [0.96, 1.04, 0.96],
-          }}
-          transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[85vw] max-w-[1300px] h-[340px] sm:h-[420px] rounded-[100%] bg-gradient-to-r from-olive-lime/20 via-olive-bright/25 to-olive-glow/20 blur-[110px] lg:blur-[140px]"
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[85vw] max-w-[1300px] h-[340px] sm:h-[420px] rounded-[100%] [background:radial-gradient(ellipse,rgba(192,230,117,0.18)_0%,rgba(175,219,98,0.2)_40%,transparent_70%)] blur-xl lg:blur-2xl opacity-45"
         />
 
         {/* Aurora Layer D: Bottom Gradient Transition to Marquee */}

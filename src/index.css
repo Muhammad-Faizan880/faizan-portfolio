@@ -65,20 +65,30 @@ body {
   background: var(--color-olive-600);
 }
 
-.marquee-track {
-  width: max-content;
-  animation: marquee-scroll 35s linear infinite;
-  will-change: transform;
-}
-
-@keyframes marquee-scroll {
-  from {
+/* Magic UI Industry-Standard Zero-Jitter Infinite Marquee */
+@keyframes marquee {
+  0% {
     transform: translate3d(0, 0, 0);
   }
-
-  to {
-    transform: translate3d(-50%, 0, 0);
+  100% {
+    transform: translate3d(calc(-100% - var(--gap)), 0, 0);
   }
+}
+
+.animate-marquee {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--gap);
+  animation: marquee var(--duration, 38s) linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+#tech-marquee:hover .animate-marquee,
+.group:hover .animate-marquee {
+  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {

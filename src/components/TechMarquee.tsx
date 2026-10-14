@@ -1,4 +1,4 @@
-import React, { useState, memo, useRef, useEffect } from "react";
+import React, { memo } from "react";
 import {
   ReactLogo,
   NextjsLogo,
@@ -126,12 +126,10 @@ const TECH_STACK_ITEMS: TechItem[] = [
 ];
 
 export const TechMarquee: React.FC = memo(() => {
-  const [isPaused, setIsPaused] = useState(false);
-
-  const renderItem = (tech: TechItem, index: number) => (
+  const renderItem = (tech: TechItem, key: string) => (
     <div
-      key={`${tech.name}-${index}`}
-      className="inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-white/70 border border-olive-300 hover:border-olive-600 hover:bg-white hover:shadow-md transition-all duration-150 shrink-0 group/item cursor-pointer"
+      key={key}
+      className="inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-white/70 border border-olive-300 hover:border-olive-600 hover:bg-white transition-colors duration-150 shrink-0 group/item cursor-pointer"
     >
       <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-olive-50 border border-olive-200 group-hover/item:border-olive-600/40 flex items-center justify-center transition-colors">
         {tech.logo}
@@ -150,40 +148,31 @@ export const TechMarquee: React.FC = memo(() => {
   return (
     <div
       id="tech-marquee"
-      className="relative w-full py-2.5 sm:py-3 border-y border-olive-300 bg-olive-100 overflow-hidden select-none"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      className="relative w-full py-2.5 sm:py-3 border-y border-olive-300 bg-olive-100 overflow-hidden select-none group"
+      style={{
+        ["--gap" as string]: "1rem",
+        ["--duration" as string]: "38s",
+      }}
     >
       {/* Smooth Edge Fade Masks in Light Olive Gradient */}
       <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 md:w-36 bg-gradient-to-r from-olive-100 via-olive-100/90 to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 md:w-36 bg-gradient-to-l from-olive-100 via-olive-100/90 to-transparent z-10 pointer-events-none" />
 
-      {/* Marquee Track: Single Unified Train with Two Identical Consecutive Sets */}
-
-      {/* Smooth, Seamless Marquee Track */}
-      <div className="marquee-container flex w-full overflow-hidden">
-        <div
-          className="marquee-track flex w-max"
-          style={{
-            animationPlayState: isPaused ? "paused" : "running",
-          }}
-        >
-          {/* Original Set */}
-          <div className="flex w-max shrink-0 items-center gap-3 sm:gap-4 pr-3 sm:pr-4">
-            {TECH_STACK_ITEMS.map((tech, index) => renderItem(tech, index))}
-          </div>
-
-          {/* Duplicate Set */}
-          <div
-            className="flex w-max shrink-0 items-center gap-3 sm:gap-4 pr-3 sm:pr-4"
-            aria-hidden="true"
-          >
-            {TECH_STACK_ITEMS.map((tech, index) =>
-              renderItem(tech, index + TECH_STACK_ITEMS.length),
-            )}
-          </div>
+      {/* Zero-Jitter Multi-Track Seamless Train */}
+      <div className="flex overflow-hidden w-full gap-[var(--gap)]">
+        <div className="animate-marquee items-center">
+          {TECH_STACK_ITEMS.map((tech, i) => renderItem(tech, `set1-${tech.name}-${i}`))}
         </div>
-      </div>  
+        <div className="animate-marquee items-center" aria-hidden="true">
+          {TECH_STACK_ITEMS.map((tech, i) => renderItem(tech, `set2-${tech.name}-${i}`))}
+        </div>
+        <div className="animate-marquee items-center" aria-hidden="true">
+          {TECH_STACK_ITEMS.map((tech, i) => renderItem(tech, `set3-${tech.name}-${i}`))}
+        </div>
+        <div className="animate-marquee items-center" aria-hidden="true">
+          {TECH_STACK_ITEMS.map((tech, i) => renderItem(tech, `set4-${tech.name}-${i}`))}
+        </div>
+      </div>
     </div>
   );
 });
