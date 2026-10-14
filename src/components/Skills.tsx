@@ -102,7 +102,6 @@ export const Skills: React.FC = () => {
 
                 <div>
                   <div className="flex items-center gap-1.5 mb-1">
-                    <span className="text-[10px] font-mono font-bold text-olive/80">0{idx + 1} //</span>
                     <h3 className={`text-sm font-bold transition-colors ${isActive ? 'text-charcoal' : 'text-charcoal group-hover:text-olive'}`}>
                       {cat.category}
                     </h3>
