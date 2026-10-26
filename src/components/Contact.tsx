@@ -108,14 +108,14 @@ export const Contact: React.FC = () => {
   };
 
   const whatsappUrl = `https://wa.me/923085170759?text=${encodeURIComponent(
-    `Hi Muhammad Faizan,\n\nI reviewed your portfolio and would like to discuss an opportunity regarding ${selectedType}.\n\nMessage: ${message}`,
+    `Hi Muhammad Fizan,\n\nI reviewed your portfolio and would like to discuss an opportunity regarding ${selectedType}.\n\nMessage: ${message}`,
   )}`;
 
   const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
     PERSONAL_INFO.email,
   )}&su=${encodeURIComponent(`Portfolio Inquiry: ${selectedType} - ${name || "Inquiry"}`)}&body=${encodeURIComponent(
     message ||
-      `Hi Muhammad Faizan,\n\nI reviewed your portfolio and would like to discuss an opportunity regarding ${selectedType}.`,
+      `Hi Muhammad Fizan,\n\nI reviewed your portfolio and would like to discuss an opportunity regarding ${selectedType}.`,
   )}`;
 
   return (
